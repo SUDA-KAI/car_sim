@@ -1,0 +1,42 @@
+{
+  "browser": "Chromium",
+  "desktop": [
+    1600,
+    1060
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "pageErrors": [],
+  "imported": "custom_e7130340198e",
+  "before": {
+    "x": -4.818482968633494,
+    "y": -5.000092035080698,
+    "z": 0,
+    "yaw": -0.0006861559185183313
+  },
+  "after": {
+    "x": -4.7454346952219915,
+    "y": -5.000163226764877,
+    "z": 0,
+    "yaw": -0.0011024548260396962
+  },
+  "checks": [
+    "scene library",
+    "preset route",
+    "canvas goal and heading",
+    "zoom and fit",
+    "import dialog",
+    "logs panel",
+    "real Nav2 readiness",
+    "goal accepted and path feedback",
+    "queue restored after reload",
+    "goal cancellation",
+    "simulation stop",
+    "scene switching",
+    "YAML + PGM upload and world generation",
+    "desktop and mobile overflow",
+    "mobile map search"
+  ]
+}

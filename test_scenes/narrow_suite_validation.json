@@ -1,0 +1,280 @@
+{
+  "geometry": "All six terrain variants use 1.7 m free corridors; turns are a stadium with 3 m centreline radius.",
+  "aliases": "turns/ramp_*/slip_* now resolve to narrow_*; old worlds require explicit wide_* aliases.",
+  "structural_tests": "7 passed; 8 narrow SDFs valid",
+  "actual_runs": {
+    "narrow_turns": {
+      "patrol": {
+        "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+        "requested_loops": 1,
+        "result": "failed",
+        "waypoints": [
+          {
+            "lap": 1,
+            "index": 1,
+            "goal": {
+              "x": 2.0,
+              "y": -3.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 24.136
+          },
+          {
+            "lap": 1,
+            "index": 2,
+            "goal": {
+              "x": 6.0,
+              "y": -3.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 25.37
+          },
+          {
+            "lap": 1,
+            "index": 3,
+            "goal": {
+              "x": 8.121320343559642,
+              "y": -2.1213203435596424,
+              "yaw": 0.7853981633974483
+            },
+            "result": "FAILED",
+            "sim_duration_s": 41.046
+          }
+        ],
+        "wall_duration_s": 260.8844615750004,
+        "reason": "Waypoint 3 failed; patrol stopped"
+      },
+      "metrics": {
+        "scene": "narrow_turns",
+        "samples": 1165,
+        "sim_duration_s": 118.728,
+        "localization": "ground_truth",
+        "patrol_result": "failed",
+        "max_abs_pitch_deg": 1.24422330953069e-07,
+        "max_abs_roll_deg": 1.1326487496192598e-08,
+        "max_height_m": 0.0190024,
+        "wheel_speed_gap_rms": 0.011546072565735458,
+        "max_abs_wheel_speed_gap": 0.03786086227575525,
+        "max_wheel_pose_error_m": 0.868152300659077,
+        "max_plan_distance_m": 0.26093307956906703,
+        "true_distance_m": 11.604045331778469,
+        "wheel_distance_m": 11.87074380127792,
+        "max_abs_lateral_offset_m": 0.377620018717967,
+        "min_estimated_side_clearance_m": 0.022153774948883154,
+        "potential_side_wall_overlap_samples": 0,
+        "steering_reversal_count": 17,
+        "min_wheel_sweep_clearance_bound_m": -0.1007584204994747,
+        "max_abs_lateral_offset_forward_settled_m": null,
+        "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+      },
+      "geometry": {
+        "scene": "narrow_turns",
+        "clear_width_m": 1.7,
+        "nominal_vehicle_width_m": 0.9,
+        "max_abs_center_offset_m": 0.377620018717967,
+        "max_abs_center_offset_forward_settled_m": null,
+        "min_nominal_body_side_clearance_m": 0.022153774948883154,
+        "min_wheel_sweep_clearance_bound_m": -0.1007584204994747,
+        "potential_nominal_body_overlap_samples": 0,
+        "max_abs_heading_deg": 68.9620586333817,
+        "max_abs_heading_error_deg": 9.193749513810154,
+        "steering_command_sign_reversals": 17,
+        "note": "Projected 3D envelope clearance estimate against straight/stadium walls; wheel bound conservatively includes all steering angles up to 0.75 rad. Not a physical contact sensor or real-vehicle safety guarantee.",
+        "patrol": {
+          "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+          "requested_loops": 1,
+          "result": "failed",
+          "waypoints": [
+            {
+              "lap": 1,
+              "index": 1,
+              "goal": {
+                "x": 2.0,
+                "y": -3.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 24.136
+            },
+            {
+              "lap": 1,
+              "index": 2,
+              "goal": {
+                "x": 6.0,
+                "y": -3.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 25.37
+            },
+            {
+              "lap": 1,
+              "index": 3,
+              "goal": {
+                "x": 8.121320343559642,
+                "y": -2.1213203435596424,
+                "yaw": 0.7853981633974483
+              },
+              "result": "FAILED",
+              "sim_duration_s": 41.046
+            }
+          ],
+          "wall_duration_s": 260.8844615750004,
+          "reason": "Waypoint 3 failed; patrol stopped"
+        }
+      }
+    },
+    "narrow_ramp_12deg": {
+      "patrol": {
+        "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_ramp_12deg.yaml",
+        "requested_loops": 1,
+        "result": "success",
+        "waypoints": [
+          {
+            "lap": 1,
+            "index": 1,
+            "goal": {
+              "x": 2.0,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 25.532
+          },
+          {
+            "lap": 1,
+            "index": 2,
+            "goal": {
+              "x": 5.5,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 18.964
+          },
+          {
+            "lap": 1,
+            "index": 3,
+            "goal": {
+              "x": 9.0,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 18.132
+          },
+          {
+            "lap": 1,
+            "index": 4,
+            "goal": {
+              "x": 13.0,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "result": "SUCCEEDED",
+            "sim_duration_s": 19.542
+          }
+        ],
+        "wall_duration_s": 279.6339381510006
+      },
+      "metrics": {
+        "scene": "narrow_ramp_12deg",
+        "samples": 1105,
+        "sim_duration_s": 112.60799999999999,
+        "localization": "ground_truth",
+        "patrol_result": "success",
+        "max_abs_pitch_deg": 12.002220420664905,
+        "max_abs_roll_deg": 0.43315924652161303,
+        "max_height_m": 0.8502262309732413,
+        "wheel_speed_gap_rms": 0.012661909897848883,
+        "max_abs_wheel_speed_gap": 0.0443102494859727,
+        "max_wheel_pose_error_m": 0.4638011232678734,
+        "max_plan_distance_m": 0.02004694894069823,
+        "true_distance_m": 16.045651386592024,
+        "wheel_distance_m": 16.110770141743675,
+        "max_abs_lateral_offset_m": 0.01908539580447844,
+        "min_estimated_side_clearance_m": 0.35918376300220667,
+        "potential_side_wall_overlap_samples": 0,
+        "steering_reversal_count": 75,
+        "min_wheel_sweep_clearance_bound_m": 0.23635053169971587,
+        "max_abs_lateral_offset_forward_settled_m": 0.010698032156486783,
+        "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+      },
+      "geometry": {
+        "scene": "narrow_ramp_12deg",
+        "clear_width_m": 1.7,
+        "nominal_vehicle_width_m": 0.9,
+        "max_abs_center_offset_m": 0.01908539580447844,
+        "max_abs_center_offset_forward_settled_m": 0.010698032156486783,
+        "min_nominal_body_side_clearance_m": 0.35918376300220667,
+        "min_wheel_sweep_clearance_bound_m": 0.23635053169971587,
+        "potential_nominal_body_overlap_samples": 0,
+        "max_abs_heading_deg": 2.1239265120627735,
+        "max_abs_heading_error_deg": 2.1239265120627735,
+        "steering_command_sign_reversals": 75,
+        "note": "Projected 3D envelope clearance estimate against straight/stadium walls; wheel bound conservatively includes all steering angles up to 0.75 rad. Not a physical contact sensor or real-vehicle safety guarantee.",
+        "patrol": {
+          "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_ramp_12deg.yaml",
+          "requested_loops": 1,
+          "result": "success",
+          "waypoints": [
+            {
+              "lap": 1,
+              "index": 1,
+              "goal": {
+                "x": 2.0,
+                "y": 0.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 25.532
+            },
+            {
+              "lap": 1,
+              "index": 2,
+              "goal": {
+                "x": 5.5,
+                "y": 0.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 18.964
+            },
+            {
+              "lap": 1,
+              "index": 3,
+              "goal": {
+                "x": 9.0,
+                "y": 0.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 18.132
+            },
+            {
+              "lap": 1,
+              "index": 4,
+              "goal": {
+                "x": 13.0,
+                "y": 0.0,
+                "yaw": 0.0
+              },
+              "result": "SUCCEEDED",
+              "sim_duration_s": 19.542
+            }
+          ],
+          "wall_duration_s": 279.6339381510006
+        }
+      }
+    }
+  },
+  "not_claimed": [
+    "Successful narrow-turn patrol",
+    "Physical contact detection from geometric bounds",
+    "Narrow low-friction patrol success",
+    "Narrow 6-degree patrol success (geometry checked only)",
+    "Real-vehicle safety or localization robustness"
+  ]
+}

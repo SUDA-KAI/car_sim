@@ -1,0 +1,55 @@
+{
+  "assembly_revision": 3,
+  "topics": {
+    "/unilidar/cloud": {
+      "count": 6,
+      "frame": "unilidar_lidar",
+      "points": 1772
+    },
+    "/unilidar/imu": {
+      "count": 74,
+      "frame": "unilidar_imu",
+      "acc": [
+        4.470501727217958e-09,
+        -1.1433016120560345e-14,
+        9.799999999999962
+      ]
+    },
+    "/imu/data_raw": {
+      "count": 73,
+      "frame": "imu_link",
+      "acc": [
+        4.470476262391168e-09,
+        -1.1746539453999566e-14,
+        9.79999999999996
+      ]
+    },
+    "/scan": {
+      "count": 5,
+      "frame": "unilidar_lidar"
+    },
+    "/ultrasonic_4": {
+      "count": 4,
+      "frame": "ultrasonic_4",
+      "range": "0.2997354567050934"
+    },
+    "/ultrasonic_1": {
+      "count": 4,
+      "frame": "ultrasonic_1",
+      "range": "0.4515915513038635"
+    },
+    "/ultrasonic_2": {
+      "count": 4,
+      "frame": "ultrasonic_2",
+      "range": "0.501312255859375"
+    },
+    "/ultrasonic_3": {
+      "count": 4,
+      "frame": "ultrasonic_3",
+      "range": "0.25001436471939087"
+    }
+  },
+  "tf_count": 24,
+  "result": "passed",
+  "all_assembly_frames_match": true
+}

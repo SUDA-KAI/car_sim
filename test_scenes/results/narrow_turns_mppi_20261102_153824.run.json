@@ -1,0 +1,99 @@
+{
+  "scene": "narrow_turns",
+  "controller": "mppi",
+  "controller_plugin": "nav2_mppi_controller::MPPIController",
+  "localization": "ground_truth",
+  "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+  "ros_domain_id": "42",
+  "use_ultrasonic": true,
+  "ultrasonic_mounting": [
+    {
+      "frame": "ultrasonic_1",
+      "topic": "/ultrasonic_1",
+      "x": -0.45999999999999996,
+      "y": -0.47500000000000003,
+      "z": 0.49,
+      "yaw": -1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_2",
+      "topic": "/ultrasonic_2",
+      "x": 0.49,
+      "y": -0.47500000000000003,
+      "z": 0.49,
+      "yaw": -1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_3",
+      "topic": "/ultrasonic_3",
+      "x": 0.49,
+      "y": 0.47500000000000003,
+      "z": 0.49,
+      "yaw": 1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_4",
+      "topic": "/ultrasonic_4",
+      "x": -0.45999999999999996,
+      "y": 0.47500000000000003,
+      "z": 0.49,
+      "yaw": 1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    }
+  ],
+  "use_l2": true,
+  "pointlio": false,
+  "ultrasonic_fusion": "range",
+  "sensor_mounting": "/tmp/patrol_assembly_tf_rb1htz2c.yaml",
+  "use_assembly": true,
+  "assembly_revision": 3,
+  "max_forward_speed_mps": 0.3,
+  "max_yaw_rate_radps": 0.4,
+  "scene_metadata": {
+    "name": "narrow_turns",
+    "kind": "narrow_turns",
+    "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+    "map": "/home/a/ros2_ws/gz_sim/test_scenes/maps/narrow_turns.yaml",
+    "spawn": [
+      -2.0,
+      -5.0,
+      0.0
+    ],
+    "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+    "nav_params": "/home/a/ros2_ws/gz_sim/test_scenes/nav2_narrow_turns.yaml",
+    "has_ground_truth": true,
+    "localization": "ground_truth",
+    "clear_width_m": 1.7,
+    "robot_length_m": 1.2,
+    "robot_width_m": 0.9,
+    "robot_height_m": 0.495,
+    "wheel_sweep_width_bound_m": 1.1458243908967158,
+    "reference_geometry": {
+      "type": "stadium",
+      "left_x": -2.0,
+      "right_x": 6.0,
+      "radius": 5.0
+    },
+    "description": "Closed 1.7 m stadium corridor. Straight length 8 m; centreline turn radius 5 m; curved mesh gap error <1 mm. Not a sharp 90-degree corner."
+  },
+  "l2_config": "/home/a/ros2_ws/gz_sim/config/l2_sim.yaml"
+}

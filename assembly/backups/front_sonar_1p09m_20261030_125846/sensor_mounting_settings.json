@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "revision": 3,
+  "saved_at": "2026-10-30T12:43:01.360255+08:00",
+  "base_frame": "base_link",
+  "coordinate_convention": "ROS REP-103: x forward, y left, z up; base at vehicle centre on ground",
+  "vehicle": {
+    "length_m": 1.2,
+    "width_m": 0.9,
+    "height_m": 0.495
+  },
+  "view": {
+    "origin": "crossbar",
+    "unit": "cm"
+  },
+  "notes": "测量原点：向前第三根横杠几何中心；距车尾0.69m、距车身左侧0.45m、离地0.495m。前X、左Y、上Z。\n2026-10-30：用户确认实际车长1.2m；横杠原点修正为 base_link 的 (0.09,0,0.495)m；保留相对横杠测量。前超声波距车尾1.39m待复核。",
+  "sensors": [
+    {
+      "id": "lidar_l2",
+      "label": "宇树 L2 雷达",
+      "kind": "lidar",
+      "frame": "unilidar_lidar",
+      "configured": false,
+      "position_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": null
+      },
+      "notes": "用户描述：顶部水平安装、雷达顶部朝上；绕竖直轴的安装方向待核对，不能仅凭水平确定Yaw。",
+      "source": "",
+      "position_reference_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    },
+    {
+      "id": "camera_left",
+      "label": "左摄像头",
+      "kind": "camera",
+      "frame": "camera_left_link",
+      "configured": false,
+      "position_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0
+      },
+      "notes": "用户确认：水平朝前安装，机械坐标前X、左Y、上Z。",
+      "source": "",
+      "position_reference_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    },
+    {
+      "id": "camera_right",
+      "label": "右摄像头",
+      "kind": "camera",
+      "frame": "camera_right_link",
+      "configured": false,
+      "position_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0
+      },
+      "notes": "用户确认：水平朝前安装，机械坐标前X、左Y、上Z。",
+      "source": "",
+      "position_reference_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    },
+    {
+      "id": "imu",
+      "label": "独立 IMU",
+      "kind": "imu",
+      "frame": "imu_link",
+      "configured": false,
+      "position_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0
+      },
+      "notes": "用户确认：平躺安装，X向前、Y向左、Z向上。",
+      "source": "",
+      "position_reference_m": {
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    },
+    {
+      "id": "ultrasonic_1",
+      "label": "超声波 1 · 后右",
+      "kind": "ultrasonic",
+      "frame": "ultrasonic_1",
+      "configured": true,
+      "position_m": {
+        "x": -0.45999999999999996,
+        "y": -0.47500000000000003,
+        "z": 0.49
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": -90.0
+      },
+      "notes": "",
+      "source": "ultrasonic_settings.json；高度 0.49 m 由用户确认",
+      "position_reference_m": {
+        "x": -0.5499999999999999,
+        "y": -0.47500000000000003,
+        "z": -0.0050000000000000044
+      }
+    },
+    {
+      "id": "ultrasonic_2",
+      "label": "超声波 2 · 前右",
+      "kind": "ultrasonic",
+      "frame": "ultrasonic_2",
+      "configured": true,
+      "position_m": {
+        "x": 0.7899999999999999,
+        "y": -0.47500000000000003,
+        "z": 0.49
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": -90.0
+      },
+      "notes": "",
+      "source": "ultrasonic_settings.json；高度 0.49 m 由用户确认",
+      "position_reference_m": {
+        "x": 0.7,
+        "y": -0.47500000000000003,
+        "z": -0.0050000000000000044
+      }
+    },
+    {
+      "id": "ultrasonic_3",
+      "label": "超声波 3 · 前左",
+      "kind": "ultrasonic",
+      "frame": "ultrasonic_3",
+      "configured": true,
+      "position_m": {
+        "x": 0.7899999999999999,
+        "y": 0.47500000000000003,
+        "z": 0.49
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 90.0
+      },
+      "notes": "",
+      "source": "ultrasonic_settings.json；高度 0.49 m 由用户确认",
+      "position_reference_m": {
+        "x": 0.7,
+        "y": 0.47500000000000003,
+        "z": -0.0050000000000000044
+      }
+    },
+    {
+      "id": "ultrasonic_4",
+      "label": "超声波 4 · 后左",
+      "kind": "ultrasonic",
+      "frame": "ultrasonic_4",
+      "configured": true,
+      "position_m": {
+        "x": -0.45999999999999996,
+        "y": 0.47500000000000003,
+        "z": 0.49
+      },
+      "rpy_deg": {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 90.0
+      },
+      "notes": "",
+      "source": "ultrasonic_settings.json；高度 0.49 m 由用户确认",
+      "position_reference_m": {
+        "x": -0.5499999999999999,
+        "y": 0.47500000000000003,
+        "z": -0.0050000000000000044
+      }
+    }
+  ],
+  "reference_frame": {
+    "frame": "third_crossbar",
+    "label": "第三根横杠中心",
+    "position_m": {
+      "x": 0.08999999999999997,
+      "y": 0.0,
+      "z": 0.495
+    }
+  }
+}

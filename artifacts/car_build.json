@@ -1,0 +1,38 @@
+{
+  "source": "/home/a/ros2_ws/gz_sim/\u8f66\u8eab.STL",
+  "mass_kg": 100.0,
+  "volume_m3": 0.08548475887690549,
+  "density_kg_m3": 1169.7991702122697,
+  "center_of_mass_m": [
+    -0.017114666521922124,
+    4.9409359985084145e-08,
+    0.2583498408027517
+  ],
+  "inertia_kg_m2": [
+    [
+      13.082270652518538,
+      2.951155183438503e-08,
+      -0.052107935170123076
+    ],
+    [
+      2.9511551358772987e-08,
+      15.681770595030784,
+      2.2362356285149701e-07
+    ],
+    [
+      -0.05210793517012191,
+      2.236235619379254e-07,
+      25.63359927153805
+    ]
+  ],
+  "dimensions_m": [
+    1.2,
+    0.9,
+    0.495
+  ],
+  "stl_transform": "millimetres -> metres; x=X/1000-0.6, y=-Z/1000+0.45, z=Y/1000",
+  "wheelbase_m": 0.79,
+  "wheel_radius_m": 0.2,
+  "track_m": 0.8,
+  "assumption": "Original CAD wheels remain rigid in visual mesh; auxiliary steering/rolling cylinders are collision only. X+ is assumed forward. Aggregate dynamics match homogeneous STL."
+}

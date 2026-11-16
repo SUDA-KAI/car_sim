@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-11-03T00:07:02.791031+08:00",
+  "domain": 43,
+  "partition": "patrol_sensors",
+  "camera_calibration_source": "/home/a/ros2_ws/tools/kalibr_web_ui/data/sessions/stereo_20261102_135012/kalibr_stereo-camchain.yaml",
+  "camera_native_resolution": [
+    1920,
+    1080
+  ],
+  "camera_sim_resolution": [
+    384,
+    216
+  ],
+  "baseline_m": 0.2471029205650454,
+  "extrinsic_provenance": "left camera / lidar / external IMU: confirmed measured installation TF; stereo optical relation: Kalibr; L2 internal IMU: SDK offset",
+  "truth_used_by_estimators": false,
+  "truth_only_for_independent_evaluation": true,
+  "files": {
+    "mounting.yaml": {
+      "sha256": "ffa560bc2a17c0e7f9ccdc79c491497254f63e5bfd52db6216679819346f351c"
+    },
+    "pointlio.yaml": {
+      "sha256": "26a9450cc811b8e44a2dd2173204463b23215e5d4484184220c1dff217018580"
+    },
+    "l2.yaml": {
+      "sha256": "4c5038966c2791e8c6933745bad54b6cdb7535ac0a2bbd0b355cde5ede65f4ea"
+    },
+    "navigation.yaml": {
+      "sha256": "cec1435c64feec1b875daf838f87654aaa502ef6ae465527c88ed75494b9a1e7"
+    },
+    "stereo.yaml": {
+      "sha256": "61c675617434287e70761bd51e3cc04841410d632eaac4e7e8cf8e6d36ab6250"
+    },
+    "ekf.yaml": {
+      "sha256": "32703d6d54f2c7951cdf77675728177e72c5affb563b696a99f7028b77ae4703"
+    },
+    "slam.yaml": {
+      "sha256": "e96fe3116e9ac4486ff9b99e629506d4c337f2540205867eac484c38c1c8f4d6"
+    },
+    "simulator.sdf": {
+      "sha256": "ed3218624096e7cf0f522718a9ff67a456abfe22b225a96017d5242dc7122152"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "narrow_slip_ice",
+  "kind": "narrow_slip",
+  "world": "narrow_slip_ice.sdf",
+  "map": "../maps/narrow_slip_ice.yaml",
+  "spawn": [
+    -3.0,
+    0.0,
+    0.0
+  ],
+  "route": "../routes/narrow_slip_ice.yaml",
+  "nav_params": "../nav2_narrow_slip_ice.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "clear_width_m": 1.7,
+  "robot_length_m": 1.2,
+  "robot_width_m": 0.9,
+  "robot_height_m": 0.495,
+  "wheel_sweep_width_bound_m": 1.1458243908967158,
+  "reference_geometry": {
+    "type": "straight",
+    "center_y": 0.0
+  },
+  "slope_degrees": 0.0,
+  "patch_friction": 0.005,
+  "description": "Continuous 1.7 m corridor, including the ramp/platform/low-friction section. No wide bypass."
+}

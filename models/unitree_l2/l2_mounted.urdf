@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="unitree_l2_measured_mount">
+  <!--Visual mounting description. No invented sensor mass/inertia or LiDAR simulation plugin.-->
+  <link name="base_link" />
+  <link name="third_crossbar" />
+  <joint name="measured_mount_third_crossbar" type="fixed">
+    <parent link="base_link" />
+    <child link="third_crossbar" />
+    <origin xyz="0.08999999999999997 0.0 0.495" rpy="0.0 0.0 0.0" />
+  </joint>
+  <link name="unilidar_lidar">
+    <visual name="unitree_l2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/a/ros2_ws/gz_sim/models/unitree_l2/upstream/meshes/l2_lidar.stl" scale="1 1 1" />
+      </geometry>
+      <material name="l2_dark">
+        <color rgba=".10 .10 .10 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="measured_mount_unilidar_lidar" type="fixed">
+    <parent link="third_crossbar" />
+    <child link="unilidar_lidar" />
+    <origin xyz="0.0 0.0 0.43400000000000005" rpy="0.0 0.0 0.0" />
+  </joint>
+</robot>

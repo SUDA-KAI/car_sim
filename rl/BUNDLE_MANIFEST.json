@@ -1,0 +1,45 @@
+{
+  "bundle": "gz_patrol_rl",
+  "version": "2026.10.30",
+  "platform": {
+    "ros": "ROS 2 Humble",
+    "simulator": "Gazebo Fortress / Ignition Gazebo 6",
+    "sdf": "1.8"
+  },
+  "world": "worlds/map_20260817_154310_filtered.sdf",
+  "world_name": "patrol",
+  "vehicle": "patrol_car",
+  "vehicle_type": "Ackermann",
+  "spawn_world_xyz_yaw": [0.4164, 12.0758, 0.0, -0.52],
+  "sensors": {
+    "lidar_2d": {
+      "gazebo_topic": "/sim/scan",
+      "ros_topic": "/scan",
+      "samples": 720,
+      "rate_hz": 10,
+      "range_m": [0.15, 25.0],
+      "frame": "laser_frame"
+    },
+    "odometry": {
+      "gazebo_topic": "/sim/odom",
+      "ros_topic": "/chassis/odom",
+      "rate_hz": 30,
+      "frame": "odom",
+      "child_frame": "base_link"
+    }
+  },
+  "control": {
+    "ros_topic": "/cmd_vel",
+    "gazebo_topic": "/sim/cmd_vel",
+    "message": "geometry_msgs/msg/Twist",
+    "max_forward_mps": 0.8,
+    "max_reverse_mps": 0.2,
+    "wheelbase_m": 0.79
+  },
+  "reset_service": "/world/patrol/set_pose",
+  "notes": [
+    "All runtime mesh and map references in this bundle are relative.",
+    "The included Gymnasium adapter is optional; consumers may use ROS 2 directly.",
+    "The lidar is a rendered gpu_lidar and needs an EGL/OpenGL rendering context even headless."
+  ]
+}

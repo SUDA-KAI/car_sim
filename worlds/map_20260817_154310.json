@@ -1,0 +1,13 @@
+{
+  "map": "/home/a/ros2_ws/src/robot_core/robot_bringup/maps/map_20260817_154310.yaml",
+  "world": "map_20260817_154310.sdf",
+  "spawn": [
+    0.4164,
+    12.0958,
+    -0.52
+  ],
+  "obstacle_boxes": 4049,
+  "resolution": 0.02,
+  "wall_height": 1.5,
+  "note": "2D extrusion; unknown cells are not reconstructed; not measured elevation."
+}

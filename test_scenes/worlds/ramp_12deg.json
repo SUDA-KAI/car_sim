@@ -1,0 +1,57 @@
+{
+  "map": "../maps/ramp_12deg.yaml",
+  "world": "ramp_12deg.sdf",
+  "spawn": [
+    -3.0,
+    0.0,
+    0.0
+  ],
+  "route": "../routes/ramp_12deg.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "nav_params": "../nav2_tests.yaml",
+  "name": "ramp_12deg",
+  "kind": "ramp",
+  "slope_degrees": 12.0,
+  "patch_friction": 1.0,
+  "obstacles": [
+    [
+      5,
+      -6.8,
+      22,
+      0.3
+    ],
+    [
+      5,
+      6.8,
+      22,
+      0.3
+    ],
+    [
+      -5.8,
+      0,
+      0.3,
+      14
+    ],
+    [
+      15.8,
+      0,
+      0.3,
+      14
+    ],
+    [
+      5.5,
+      -2.35,
+      11.6,
+      0.3
+    ],
+    [
+      5.5,
+      2.35,
+      11.6,
+      0.3
+    ]
+  ],
+  "description": "12 deg up/down, run 4 m each, platform 3 m, rise 0.850 m. Route follows traversable terrain.",
+  "baseline": "Ideal ground-truth localization; static-map obstacles. Physical model, not field validation."
+}

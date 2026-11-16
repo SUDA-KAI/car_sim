@@ -1,0 +1,117 @@
+{
+  "source": "/home/a/ros2_ws/gz_sim/test_scenes/results/narrow_turns_mppi_20261029_143233",
+  "samples": 3258,
+  "last_sim_time": 332.282,
+  "latest": {
+    "sim_time": "332.282",
+    "x": "8.97906116368998",
+    "y": "-0.16293690354650328",
+    "z": "-1.5741086560902355e-08",
+    "roll_deg": "1.7858794346725429e-09",
+    "pitch_deg": "2.398328743470177e-08",
+    "yaw": "1.3807693965790093",
+    "true_vx": "0.0",
+    "true_vy": "0.0",
+    "true_vz": "0.0",
+    "true_wz": "0.0",
+    "wheel_vx": "0.0032654843536761295",
+    "command_vx": "0.0",
+    "command_wz": "0.0",
+    "wheel_minus_true_vx": "0.0032654843536761295",
+    "wheel_pose_error_m": "1.107111483267093",
+    "plan_distance_m": "0.004746186474123326",
+    "lateral_offset_m": "-0.016486324559040533",
+    "estimated_side_clearance_m": "0.2992703457649797",
+    "wheel_sweep_clearance_bound_m": "0.18119659076822492"
+  },
+  "whole_run": {
+    "max_command_forward_mps": 0.18,
+    "min_command_reverse_mps": -0.12,
+    "mean_absolute_command_mps": 0.06453348868604437,
+    "fraction_abs_command_below_005": 0.49969306322897483,
+    "forward_reverse_changes_above_002": 270,
+    "net_displacement_m": 11.339696250310407,
+    "travel_distance_m": 21.34552421279846,
+    "position_span_x_m": 11.007982583883456,
+    "position_span_y_m": 2.8381124933648914,
+    "mean_abs_command_actual_speed_difference_mps": 0.010269715124023217
+  },
+  "last_60_sim_seconds": {
+    "max_command_forward_mps": 0.17181092360488665,
+    "min_command_reverse_mps": -0.12,
+    "mean_absolute_command_mps": 0.06842165546706455,
+    "fraction_abs_command_below_005": 0.34974533106960953,
+    "forward_reverse_changes_above_002": 55,
+    "net_displacement_m": 0.5542545861231075,
+    "travel_distance_m": 4.095814271113443,
+    "position_span_x_m": 0.23554667826543607,
+    "position_span_y_m": 1.0295220511300205,
+    "mean_abs_command_actual_speed_difference_mps": 0.01460582451525334
+  },
+  "turning_lateral_velocity_fit": {
+    "samples": 244,
+    "lateral_velocity_per_yaw_rate_m": 0.3781928611348902,
+    "residual_rms_mps": 0.0019211802310762803
+  },
+  "waypoint_3": {
+    "minimum_position_error_m": 0.02691563250026547,
+    "yaw_error_at_minimum_position_deg": 15.731209807720033,
+    "current_position_error_m": 2.1379862049686724,
+    "current_yaw_error_deg": 34.112258904802644
+  },
+  "waypoint_4": {
+    "minimum_position_error_m": 0.16427680725939467,
+    "yaw_error_at_minimum_position_deg": 10.887741095197356,
+    "current_position_error_m": 0.16427680725939467,
+    "current_yaw_error_deg": 10.887741095197356
+  },
+  "resolved_limits": {
+    "mppi": {
+      "vx_max": 0.18,
+      "vx_min": -0.12,
+      "wz_max": 0.15,
+      "model_dt": 0.1,
+      "time_steps": 60
+    },
+    "velocity_smoother": {
+      "deadband_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feedback": "OPEN_LOOP",
+      "max_accel": [
+        0.15,
+        0.0,
+        0.35
+      ],
+      "max_decel": [
+        -0.2,
+        0.0,
+        -0.35
+      ],
+      "max_velocity": [
+        0.18,
+        0.0,
+        0.15
+      ],
+      "min_velocity": [
+        -0.12,
+        0.0,
+        -0.15
+      ],
+      "odom_duration": 0.15,
+      "odom_topic": "/chassis/odom",
+      "scale_velocities": true,
+      "smoothing_frequency": 20.0,
+      "use_sim_time": true,
+      "velocity_timeout": 0.5
+    },
+    "goal_checker": {
+      "plugin": "nav2_controller::SimpleGoalChecker",
+      "stateful": true,
+      "xy_goal_tolerance": 0.2,
+      "yaw_goal_tolerance": 0.12
+    }
+  }
+}

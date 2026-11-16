@@ -1,0 +1,52 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/ramp_12deg.yaml",
+  "requested_loops": 1,
+  "result": "success",
+  "waypoints": [
+    {
+      "lap": 1,
+      "index": 1,
+      "goal": {
+        "x": 2.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 12.606
+    },
+    {
+      "lap": 1,
+      "index": 2,
+      "goal": {
+        "x": 5.5,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 11.036
+    },
+    {
+      "lap": 1,
+      "index": 3,
+      "goal": {
+        "x": 9.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 10.628
+    },
+    {
+      "lap": 1,
+      "index": 4,
+      "goal": {
+        "x": 13.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 12.464
+    }
+  ],
+  "wall_duration_s": 130.63718339600018
+}

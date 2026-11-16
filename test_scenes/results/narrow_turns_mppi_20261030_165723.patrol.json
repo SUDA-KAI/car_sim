@@ -1,0 +1,42 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+  "requested_loops": 1,
+  "result": "failed",
+  "waypoints": [
+    {
+      "lap": 1,
+      "index": 1,
+      "goal": {
+        "x": 2.0,
+        "y": -3.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 21.022
+    },
+    {
+      "lap": 1,
+      "index": 2,
+      "goal": {
+        "x": 6.0,
+        "y": -3.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 21.216
+    },
+    {
+      "lap": 1,
+      "index": 3,
+      "goal": {
+        "x": 8.121320343559642,
+        "y": -2.1213203435596424,
+        "yaw": 0.7853981633974483
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 53.534
+    }
+  ],
+  "wall_duration_s": 817.4078886489988,
+  "reason": "Unable to convert function return value to a Python type! The signature was\n\t(self: rclpy._rclpy_pybind11.ActionClient, arg0: object) -> object"
+}

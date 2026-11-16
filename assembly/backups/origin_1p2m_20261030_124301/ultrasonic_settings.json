@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "origin": "rear_left",
+  "length_m": 1.5,
+  "width_m": 0.9,
+  "port": "/dev/ttyCH341USB2",
+  "baud": 115200,
+  "configured": true,
+  "sensors": [
+    {
+      "longitudinal_m": 0.14,
+      "right_m": 0.925,
+      "heading_deg": 90.0,
+      "fov_deg": 60.0,
+      "max_range_m": 0.55
+    },
+    {
+      "longitudinal_m": 1.39,
+      "right_m": 0.925,
+      "heading_deg": 90.0,
+      "fov_deg": 60.0,
+      "max_range_m": 0.55
+    },
+    {
+      "longitudinal_m": 1.39,
+      "right_m": -0.025,
+      "heading_deg": -90.0,
+      "fov_deg": 60.0,
+      "max_range_m": 0.55
+    },
+    {
+      "longitudinal_m": 0.14,
+      "right_m": -0.025,
+      "heading_deg": -90.0,
+      "fov_deg": 60.0,
+      "max_range_m": 0.55
+    }
+  ]
+}

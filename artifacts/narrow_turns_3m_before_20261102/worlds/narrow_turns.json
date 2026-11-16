@@ -1,0 +1,27 @@
+{
+  "name": "narrow_turns",
+  "kind": "narrow_turns",
+  "world": "narrow_turns.sdf",
+  "map": "../maps/narrow_turns.yaml",
+  "spawn": [
+    -2.0,
+    -3.0,
+    0.0
+  ],
+  "route": "../routes/narrow_turns.yaml",
+  "nav_params": "../nav2_narrow_turns.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "clear_width_m": 1.7,
+  "robot_length_m": 1.2,
+  "robot_width_m": 0.9,
+  "robot_height_m": 0.495,
+  "wheel_sweep_width_bound_m": 1.1458243908967158,
+  "reference_geometry": {
+    "type": "stadium",
+    "left_x": -2.0,
+    "right_x": 6.0,
+    "radius": 3.0
+  },
+  "description": "Closed 1.7 m stadium corridor. Straight length 8 m; centreline turn radius 3 m; curved mesh gap error <1 mm. Not a sharp 90-degree corner."
+}

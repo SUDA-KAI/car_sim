@@ -1,0 +1,248 @@
+{
+  "scene": "narrow_17",
+  "domain": 73,
+  "partition": "patrol_web_console_73",
+  "ready": true,
+  "mode": "through_poses",
+  "mission": "canceled",
+  "completed": 1,
+  "total": 2,
+  "pose": {
+    "x": -3.0000000000000653,
+    "y": 0.09999999999999308,
+    "z": -7.842996248340675e-07,
+    "yaw": 0.0523598775597396
+  },
+  "scan_points": 267,
+  "ultrasonic": [
+    0.4515915513038635,
+    0.501312255859375,
+    0.25001436471939087,
+    0.2997354567050934
+  ],
+  "note": "Actual sensor and Action integration. The existing MPPI controller repeatedly aborted FollowPath without vehicle progress; the test was canceled. No route success is claimed.",
+  "events": [
+    {
+      "id": 400,
+      "time": 1793610580.1386068,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610580.114300798] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 401,
+      "time": 1793610583.2970326,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610583.265817383] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 402,
+      "time": 1793610586.428815,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610586.415227663] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 403,
+      "time": 1793610589.5766075,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610589.563855143] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 404,
+      "time": 1793610592.72226,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610592.714745146] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 405,
+      "time": 1793610595.8658333,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610595.863887482] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 406,
+      "time": 1793610599.0212765,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610599.014119692] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 407,
+      "time": 1793610602.1699812,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610602.163768404] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 408,
+      "time": 1793610605.3170037,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610605.314293990] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 409,
+      "time": 1793610608.4740705,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610608.467195417] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 410,
+      "time": 1793610611.5704737,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610611.564127896] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 411,
+      "time": 1793610614.7172656,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610614.714455139] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 412,
+      "time": 1793610617.8654177,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610617.864061950] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 413,
+      "time": 1793610621.0237408,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610621.013925998] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 414,
+      "time": 1793610624.1665616,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610624.163905356] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 415,
+      "time": 1793610627.3166733,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610627.314905145] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 416,
+      "time": 1793610630.471588,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610630.464212947] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 417,
+      "time": 1793610633.6213987,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610633.613901349] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 418,
+      "time": 1793610636.767311,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610636.764546500] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 419,
+      "time": 1793610639.917478,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610639.914130471] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 420,
+      "time": 1793610643.0684147,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610643.066215789] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 421,
+      "time": 1793610646.2161748,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610646.213881471] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 422,
+      "time": 1793610649.370695,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610649.363758442] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 423,
+      "time": 1793610652.5163946,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610652.514287671] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 424,
+      "time": 1793610655.6682086,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610655.665872019] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 425,
+      "time": 1793610658.8151338,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610658.813803925] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 426,
+      "time": 1793610661.9667735,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610661.964175833] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 427,
+      "time": 1793610665.1184804,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610665.114702220] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 428,
+      "time": 1793610668.271441,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610668.264925278] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 429,
+      "time": 1793610671.41932,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610671.413827594] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 430,
+      "time": 1793610674.5650513,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610674.563867400] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 431,
+      "time": 1793610677.7210534,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610677.714701548] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 432,
+      "time": 1793610680.886972,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610680.866318710] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 433,
+      "time": 1793610684.01647,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610684.013845077] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 434,
+      "time": 1793610687.1211662,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610687.113869869] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 435,
+      "time": 1793610690.2658713,
+      "level": "warning",
+      "message": "[controller_server-33] [WARN] [1793610690.264063038] [controller_server]: [follow_path] [ActionServer] Aborting handle."
+    },
+    {
+      "id": 437,
+      "time": 1793610694.4702098,
+      "level": "warning",
+      "message": "导航任务已取消"
+    }
+  ]
+}

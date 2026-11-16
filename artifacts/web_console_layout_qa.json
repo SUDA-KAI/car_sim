@@ -1,0 +1,27 @@
+{
+  "maps": 17,
+  "layouts": [
+    {
+      "width": 1600,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "pageErrors": [],
+  "idle_start_button_enabled": true
+}

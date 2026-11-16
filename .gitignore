@@ -1,0 +1,17 @@
+# 打包输出（run/pack 脚本生成物）
+/dist/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 编辑器与系统杂物
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 日志与临时文件
+*.log
+*.tmp

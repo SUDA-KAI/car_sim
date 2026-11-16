@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "checks": {
+    "action_succeeded": true,
+    "right_bend_traversed": true,
+    "left_bend_traversed": true,
+    "upper_straight_reached": true,
+    "lower_straight_reached": true,
+    "sufficient_travel": true,
+    "complete_heading_rotation": true,
+    "no_nominal_body_overlap": true,
+    "no_conservative_wheel_envelope_overlap": true
+  },
+  "scene_radius_m": 5.0,
+  "clear_width_m": 1.7,
+  "samples": 1813,
+  "sim_duration_s": 184.858,
+  "distance_m": 46.88766222029345,
+  "nominal_loop_length_m": 47.41592653589793,
+  "heading_rotation_rad": 6.183134975616613,
+  "min_nominal_body_clearance_m": 0.24599557249344883,
+  "min_conservative_wheel_clearance_m": 0.12308337704509054,
+  "median_bend_speed_mps": 0.2740238313226492,
+  "bend_slow_sample_fraction": 0.0,
+  "max_path_distance_m": 0.10200896077460654,
+  "note": "Ideal ground-truth localization and geometric envelope checks, not a contact-sensor or real-car safety validation.",
+  "run": {
+    "scene": "narrow_turns",
+    "controller": "mppi",
+    "controller_plugin": "nav2_mppi_controller::MPPIController",
+    "localization": "ground_truth",
+    "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+    "ros_domain_id": "42",
+    "use_ultrasonic": true,
+    "ultrasonic_mounting": [
+      {
+        "frame": "ultrasonic_1",
+        "topic": "/ultrasonic_1",
+        "x": -0.45999999999999996,
+        "y": -0.47500000000000003,
+        "z": 0.49,
+        "yaw": -1.5707963267948966,
+        "field_of_view": 1.0471975511965976,
+        "min_range": 0.03,
+        "max_range": 0.55,
+        "roll": 0.0,
+        "pitch": -0.0
+      },
+      {
+        "frame": "ultrasonic_2",
+        "topic": "/ultrasonic_2",
+        "x": 0.49,
+        "y": -0.47500000000000003,
+        "z": 0.49,
+        "yaw": -1.5707963267948966,
+        "field_of_view": 1.0471975511965976,
+        "min_range": 0.03,
+        "max_range": 0.55,
+        "roll": 0.0,
+        "pitch": -0.0
+      },
+      {
+        "frame": "ultrasonic_3",
+        "topic": "/ultrasonic_3",
+        "x": 0.49,
+        "y": 0.47500000000000003,
+        "z": 0.49,
+        "yaw": 1.5707963267948966,
+        "field_of_view": 1.0471975511965976,
+        "min_range": 0.03,
+        "max_range": 0.55,
+        "roll": 0.0,
+        "pitch": -0.0
+      },
+      {
+        "frame": "ultrasonic_4",
+        "topic": "/ultrasonic_4",
+        "x": -0.45999999999999996,
+        "y": 0.47500000000000003,
+        "z": 0.49,
+        "yaw": 1.5707963267948966,
+        "field_of_view": 1.0471975511965976,
+        "min_range": 0.03,
+        "max_range": 0.55,
+        "roll": 0.0,
+        "pitch": -0.0
+      }
+    ],
+    "use_l2": true,
+    "pointlio": false,
+    "ultrasonic_fusion": "range",
+    "sensor_mounting": "/tmp/patrol_assembly_tf_rb1htz2c.yaml",
+    "use_assembly": true,
+    "assembly_revision": 3,
+    "max_forward_speed_mps": 0.3,
+    "max_yaw_rate_radps": 0.4,
+    "scene_metadata": {
+      "name": "narrow_turns",
+      "kind": "narrow_turns",
+      "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+      "map": "/home/a/ros2_ws/gz_sim/test_scenes/maps/narrow_turns.yaml",
+      "spawn": [
+        -2.0,
+        -5.0,
+        0.0
+      ],
+      "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+      "nav_params": "/home/a/ros2_ws/gz_sim/test_scenes/nav2_narrow_turns.yaml",
+      "has_ground_truth": true,
+      "localization": "ground_truth",
+      "clear_width_m": 1.7,
+      "robot_length_m": 1.2,
+      "robot_width_m": 0.9,
+      "robot_height_m": 0.495,
+      "wheel_sweep_width_bound_m": 1.1458243908967158,
+      "reference_geometry": {
+        "type": "stadium",
+        "left_x": -2.0,
+        "right_x": 6.0,
+        "radius": 5.0
+      },
+      "description": "Closed 1.7 m stadium corridor. Straight length 8 m; centreline turn radius 5 m; curved mesh gap error <1 mm. Not a sharp 90-degree corner."
+    },
+    "l2_config": "/home/a/ros2_ws/gz_sim/config/l2_sim.yaml"
+  },
+  "patrol": {
+    "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+    "requested_loops": 1,
+    "navigation_mode": "through_poses",
+    "result": "success",
+    "waypoints": [],
+    "segments": [
+      {
+        "lap": 1,
+        "result": "SUCCEEDED",
+        "sim_duration_s": 103.028,
+        "via_points": 21,
+        "segment": 1
+      },
+      {
+        "lap": 1,
+        "result": "SUCCEEDED",
+        "sim_duration_s": 75.356,
+        "via_points": 19,
+        "segment": 2
+      }
+    ],
+    "laps": [
+      {
+        "lap": 1,
+        "result": "SUCCEEDED",
+        "sim_duration_s": 178.408
+      }
+    ],
+    "wall_duration_s": 615.8404668400003
+  },
+  "runtime_log_counts": {
+    "optimizer_failures": 0,
+    "backup_recoveries": 0,
+    "wait_recoveries": 0,
+    "controller_rate_warnings": 35,
+    "planner_failures": 0
+  },
+  "unit_tests_passed": 29,
+  "read_only_range_adapter_check": {
+    "passed": true,
+    "matched_stamp_pairs": {
+      "1": 64,
+      "2": 64,
+      "3": 64,
+      "4": 64
+    },
+    "no_echo_conversions_checked": 0,
+    "domain": 42,
+    "read_only": true
+  },
+  "validation_log": "artifacts/navigation_5m_dense_validation.log",
+  "important_scope": "One complete 5 m radius / 1.7 m width run at 0.3 m/s command cap with L2, both IMUs, four sonar sensors and probability fusion; ideal ground-truth localization; Point-LIO disabled."
+}

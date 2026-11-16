@@ -1,0 +1,48 @@
+{
+  "name": "narrow_17_baseline",
+  "kind": "narrow",
+  "world": "narrow_17_baseline.sdf",
+  "map": "../maps/narrow_17_baseline.yaml",
+  "spawn": [
+    -3.0,
+    0.1,
+    0.05235987755982989
+  ],
+  "route": "../routes/narrow_17_baseline.yaml",
+  "nav_params": "../nav2_narrow_17_baseline.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "clear_width_m": 1.7,
+  "corridor_center_y": 0.0,
+  "robot_length_m": 1.2,
+  "robot_width_m": 0.9,
+  "wheel_sweep_width_bound_m": 1.1458243908967158,
+  "obstacles": [
+    [
+      4.0,
+      0.95,
+      18.0,
+      0.2
+    ],
+    [
+      4.0,
+      -0.95,
+      18.0,
+      0.2
+    ],
+    [
+      -5.1,
+      0.0,
+      0.2,
+      2.1
+    ],
+    [
+      13.1,
+      0.0,
+      0.2,
+      2.1
+    ]
+  ],
+  "baseline": "Original test settings",
+  "description": "1.7 m clear straight corridor; 10 m forward then reverse, no impossible U-turn. Spawn offset 0.10 m, heading offset 3 degrees."
+}

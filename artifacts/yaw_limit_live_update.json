@@ -1,0 +1,39 @@
+{
+  "domain": 42,
+  "requested_max_yaw_rate_radps": 0.4,
+  "before": {
+    "controller": {
+      "FollowPath.wz_max": 0.15
+    },
+    "smoother": {
+      "max_velocity": [
+        0.8,
+        0.0,
+        0.15
+      ],
+      "min_velocity": [
+        -0.12,
+        0.0,
+        -0.15
+      ]
+    }
+  },
+  "after": {
+    "controller": {
+      "FollowPath.wz_max": 0.4
+    },
+    "smoother": {
+      "max_velocity": [
+        0.8,
+        0.0,
+        0.4
+      ],
+      "min_velocity": [
+        -0.12,
+        0.0,
+        -0.4
+      ]
+    }
+  },
+  "success": true
+}

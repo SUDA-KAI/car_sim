@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "parts": 20,
+  "source_assets": 8,
+  "preserved_existing_browser_draft": true,
+  "ultrasound_mapping": {
+    "1": "ultrasonic_right",
+    "2": "ultrasonic_right",
+    "3": "ultrasonic_left",
+    "4": "ultrasonic_left"
+  },
+  "saved_config_unchanged_user_revision": 0
+}

@@ -1,0 +1,8 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+  "requested_loops": 1,
+  "result": "failed",
+  "waypoints": [],
+  "wall_duration_s": 123.05025659300009,
+  "reason": "Nav2 did not activate within 120 wall-clock seconds"
+}

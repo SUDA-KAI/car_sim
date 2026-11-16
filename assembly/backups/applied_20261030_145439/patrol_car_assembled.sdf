@@ -1,0 +1,922 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.8">
+  <model name="patrol_car">
+    <link name="base_link">
+      <inertial>
+        <pose>-0.0177780046189 5.04692134678e-08 0.259601471709 0 0 0</pose>
+        <mass>97.900000000000006</mass>
+        <inertia>
+          <ixx>12.717100739399999</ixx>
+          <ixy>2.6234040752000001e-08</ixy>
+          <ixz>-0.055978502405900001</ixz>
+          <iyy>15.305306505500001</iyy>
+          <iyz>2.2980779105000001e-07</iyz>
+          <izz>24.946771761699999</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0 0 0.39 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.7 0.21</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.5625 0.875 1</diffuse>
+          <ambient>0.15 0.5625 0.875 1</ambient>
+        </material>
+      </visual>
+      <visual name="measured_reference_centre">
+        <pose>0.08999999999999997 0.0 0.495 0.0 -0.0 0.0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.013</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>.7 .32 .85 1</ambient>
+          <diffuse>.7 .32 .85 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_l2_mesh">
+        <pose>0.08999999999999997 0.0 0.929 0.0 -0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/l2.stl</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>.16 .18 .20 1</ambient>
+          <diffuse>.16 .18 .20 1</diffuse>
+        </material>
+        <visibility_flags>2</visibility_flags>
+      </visual>
+      <visual name="measured_camera_left_link">
+        <pose>0.08999999999999997 0.124 0.8865 0.0 -0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>.06 .05 .04</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>.7 .45 .16 1</ambient>
+          <diffuse>.7 .45 .16 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_camera_left_link_lens">
+        <pose>0.12499999999999997 0.124 0.8865 0.0 1.5707963267948966 -0.0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.013</radius>
+            <length>0.012</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>.025 .025 .025 1</ambient>
+          <diffuse>.025 .025 .025 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_camera_right_link">
+        <pose>0.09999999999999998 -0.124 0.8865 0.0 -0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>.06 .05 .04</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>.12 .42 .65 1</ambient>
+          <diffuse>.12 .42 .65 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_camera_right_link_lens">
+        <pose>0.13499999999999998 -0.124 0.8865 0.0 1.5707963267948966 -0.0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.013</radius>
+            <length>0.012</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>.025 .025 .025 1</ambient>
+          <diffuse>.025 .025 .025 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_external_imu">
+        <pose>0.08999999999999997 0.0 0.645 0.0 -0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>.04 .03 .015</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>.48 .23 .72 1</ambient>
+          <diffuse>.48 .23 .72 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_ultrasonic_1">
+        <pose>-0.45999999999999996 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>0.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 .8 1 1</ambient>
+          <diffuse>0 .8 1 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_ultrasonic_2">
+        <pose>0.49 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>0.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 .8 1 1</ambient>
+          <diffuse>0 .8 1 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_ultrasonic_3">
+        <pose>0.49 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>0.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 .8 1 1</ambient>
+          <diffuse>0 .8 1 1</diffuse>
+        </material>
+      </visual>
+      <visual name="measured_ultrasonic_4">
+        <pose>-0.45999999999999996 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>0.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 .8 1 1</ambient>
+          <diffuse>0 .8 1 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_main_bracket">
+        <pose>0.18499999880790705 0.12537499999999993 0.4449999982118605 1.5707963267948961 5.551115123125783e-17 -1.5707963267948966</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/main_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.6862745098039216 0.611764705882353 0.8784313725490196 1</ambient>
+          <diffuse>0.6862745098039216 0.611764705882353 0.8784313725490196 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_l2_bracket">
+        <pose>0.04925641712575551 -0.09792834774854475 0.929 3.141592653589793 -1.232595164407831e-32 1.9619246121668257</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/l2_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.9568627450980393 0.6705882352941176 0.3333333333333333 1</ambient>
+          <diffuse>0.9568627450980393 0.6705882352941176 0.3333333333333333 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_camera_bracket">
+        <pose>0.07159999959170812 -0.08899999386072159 0.8565 1.570796326794897 -1.1102230246251565e-16 1.5707963267948966</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/camera_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.39215686274509803 0.7686274509803922 0.7333333333333333 1</ambient>
+          <diffuse>0.39215686274509803 0.7686274509803922 0.7333333333333333 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_camera_right_bracket">
+        <pose>0.07108019771949069 -0.16907815137008303 0.8571669104246289 1.5691955374421784 0.005394519162971168 1.5663984642139948</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/camera_right_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.34901960784313724 0.6196078431372549 0.8156862745098039 1</ambient>
+          <diffuse>0.34901960784313724 0.6196078431372549 0.8156862745098039 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_1_model">
+        <pose>-0.5060000037252903 -0.2961999968588352 0.5060000017285347 3.141592653589793 6.162975822039155e-33 0.0</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_right.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8274509803921568 0.615686274509804 0.45098039215686275 1</ambient>
+          <diffuse>0.8274509803921568 0.615686274509804 0.45098039215686275 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_2_model">
+        <pose>0.439 -0.2961999968588352 0.5060000017285347 3.141592653589793 -1.2703590903906013e-33 7.778705969072964e-50</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_right.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8274509803921568 0.615686274509804 0.45098039215686275 1</ambient>
+          <diffuse>0.8274509803921568 0.615686274509804 0.45098039215686275 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_3_model">
+        <pose>0.439 0.46460000228881837 0.5060000017285347 -3.141592653589793 -1.2703590903906013e-33 -7.778705969072964e-50</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_left.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.49411764705882355 0.7843137254901961 0.5450980392156862 1</ambient>
+          <diffuse>0.49411764705882355 0.7843137254901961 0.5450980392156862 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_4_model">
+        <pose>-0.506 0.46460000228881837 0.5060000017285347 -3.141592653589793 -2.0138304528209138e-17 -1.2331155090362985e-33</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_left.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.49411764705882355 0.7843137254901961 0.5450980392156862 1</ambient>
+          <diffuse>0.49411764705882355 0.7843137254901961 0.5450980392156862 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_1_body">
+        <pose>-0.4835000028386712 -0.4039000033438206 0.498 3.141592653589793 -1.4855558128253282e-17 1.8192811711312836e-33</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</ambient>
+          <diffuse>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_2_body">
+        <pose>0.4615000008866191 -0.4039000033438206 0.498 3.141592653589793 1.265837699344445e-16 -1.550204086742224e-32</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</ambient>
+          <diffuse>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_3_body">
+        <pose>0.508499999113381 0.4038999996185303 0.498 3.141592653589793 1.5407439555097887e-33 -3.141592653589793</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</ambient>
+          <diffuse>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</diffuse>
+        </material>
+      </visual>
+      <visual name="assembled_ultrasonic_4_body">
+        <pose>-0.43650000088661906 0.4038999996185303 0.498 -3.141592653589793 -6.813789755110163e-17 -3.141592653589793</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/a/ros2_ws/gz_sim/models/assembled/meshes/ultrasonic_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</ambient>
+          <diffuse>0.27450980392156865 0.3411764705882353 0.40784313725490196 1</diffuse>
+        </material>
+      </visual>
+      <sensor name="ultrasonic_1" type="gpu_lidar">
+        <pose>-0.45999999999999996 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <topic>/sim/ultrasonic_1/scan</topic>
+        <update_rate>10</update_rate>
+        <always_on>true</always_on>
+        <ignition_frame_id>ultrasonic_1</ignition_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>61</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.5235987755982988</min_angle>
+              <max_angle>0.5235987755982988</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.03</min>
+            <max>0.55</max>
+            <resolution>0.001</resolution>
+          </range>
+        </lidar>
+      </sensor>
+      <visual name="ultrasonic_1_marker">
+        <pose>-0.45999999999999996 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0.8 1 1</ambient>
+          <diffuse>0 0.8 1 1</diffuse>
+        </material>
+      </visual>
+      <sensor name="ultrasonic_2" type="gpu_lidar">
+        <pose>0.49 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <topic>/sim/ultrasonic_2/scan</topic>
+        <update_rate>10</update_rate>
+        <always_on>true</always_on>
+        <ignition_frame_id>ultrasonic_2</ignition_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>61</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.5235987755982988</min_angle>
+              <max_angle>0.5235987755982988</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.03</min>
+            <max>0.55</max>
+            <resolution>0.001</resolution>
+          </range>
+        </lidar>
+      </sensor>
+      <visual name="ultrasonic_2_marker">
+        <pose>0.49 -0.47500000000000003 0.49 0.0 -0.0 -1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0.8 1 1</ambient>
+          <diffuse>0 0.8 1 1</diffuse>
+        </material>
+      </visual>
+      <sensor name="ultrasonic_3" type="gpu_lidar">
+        <pose>0.49 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <topic>/sim/ultrasonic_3/scan</topic>
+        <update_rate>10</update_rate>
+        <always_on>true</always_on>
+        <ignition_frame_id>ultrasonic_3</ignition_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>61</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.5235987755982988</min_angle>
+              <max_angle>0.5235987755982988</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.03</min>
+            <max>0.55</max>
+            <resolution>0.001</resolution>
+          </range>
+        </lidar>
+      </sensor>
+      <visual name="ultrasonic_3_marker">
+        <pose>0.49 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0.8 1 1</ambient>
+          <diffuse>0 0.8 1 1</diffuse>
+        </material>
+      </visual>
+      <sensor name="ultrasonic_4" type="gpu_lidar">
+        <pose>-0.45999999999999996 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <topic>/sim/ultrasonic_4/scan</topic>
+        <update_rate>10</update_rate>
+        <always_on>true</always_on>
+        <ignition_frame_id>ultrasonic_4</ignition_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>61</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.5235987755982988</min_angle>
+              <max_angle>0.5235987755982988</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.03</min>
+            <max>0.55</max>
+            <resolution>0.001</resolution>
+          </range>
+        </lidar>
+      </sensor>
+      <visual name="ultrasonic_4_marker">
+        <pose>-0.45999999999999996 0.47500000000000003 0.49 0.0 -0.0 1.5707963267948966</pose>
+        <geometry>
+          <sphere>
+            <radius>.008</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0.8 1 1</ambient>
+          <diffuse>0 0.8 1 1</diffuse>
+        </material>
+      </visual>
+      <sensor name="l2_lidar_3d" type="gpu_lidar">
+        <pose>0.08999999999999997 0.0 0.929 0.0 -0.0 0.0</pose>
+        <topic>/sim/l2/scan</topic>
+        <update_rate>10.0</update_rate>
+        <always_on>true</always_on>
+        <ignition_frame_id>unilidar_lidar</ignition_frame_id>
+        <lidar>
+          <visibility_mask>4</visibility_mask>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.141592653589793</min_angle>
+              <max_angle>3.12413936106985</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>19</samples>
+              <resolution>1</resolution>
+              <min_angle>0.0</min_angle>
+              <max_angle>1.5533430342749532</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>30.0</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.0</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+      <sensor name="l2_builtin_imu" type="imu">
+        <pose>0.08230199999999997 -0.014655 0.93567 0.0 -0.0 0.0</pose>
+        <always_on>true</always_on>
+        <update_rate>200.0</update_rate>
+        <topic>/sim/l2/imu</topic>
+        <ignition_frame_id>unilidar_imu</ignition_frame_id>
+        <imu>
+          <orientation_reference_frame>
+            <localization>CUSTOM</localization>
+            <custom_rpy parent_frame="world">0 0 0</custom_rpy>
+          </orientation_reference_frame>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="external_imu" type="imu">
+        <pose>0.08999999999999997 0.0 0.645 0.0 -0.0 0.0</pose>
+        <always_on>true</always_on>
+        <update_rate>200.0</update_rate>
+        <topic>/sim/external/imu</topic>
+        <ignition_frame_id>imu_link</ignition_frame_id>
+        <imu>
+          <orientation_reference_frame>
+            <localization>CUSTOM</localization>
+            <custom_rpy parent_frame="world">0 0 0</custom_rpy>
+          </orientation_reference_frame>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+    </link>
+    <joint name="front_left_steer" type="revolute">
+      <pose relative_to="base_link">0.39 0.4 0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_knuckle</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.75</lower>
+          <upper>0.75</upper>
+          <effort>150</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="front_left_knuckle">
+      <pose relative_to="front_left_steer">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.050000000000000003</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="front_left_roll" type="revolute">
+      <pose relative_to="front_left_knuckle">0 0 0 0 0 0</pose>
+      <parent>front_left_knuckle</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="front_left_wheel">
+      <pose relative_to="front_left_roll">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0054166666666700001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.0054166666666700001</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_left_wheel_collision">
+        <pose>0 0 0 1.570796326794896 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.20000000000000001</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="front_right_steer" type="revolute">
+      <pose relative_to="base_link">0.39 -0.4 0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_knuckle</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.75</lower>
+          <upper>0.75</upper>
+          <effort>150</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="front_right_knuckle">
+      <pose relative_to="front_right_steer">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.050000000000000003</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="front_right_roll" type="revolute">
+      <pose relative_to="front_right_knuckle">0 0 0 0 0 0</pose>
+      <parent>front_right_knuckle</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="front_right_wheel">
+      <pose relative_to="front_right_roll">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0054166666666700001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.0054166666666700001</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_right_wheel_collision">
+        <pose>0 0 0 1.570796326794896 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.20000000000000001</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rear_left_roll" type="revolute">
+      <pose relative_to="base_link">-0.4 0.4 0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rear_left_wheel">
+      <pose relative_to="rear_left_roll">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0054166666666700001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.0054166666666700001</izz>
+        </inertia>
+      </inertial>
+      <collision name="rear_left_wheel_collision">
+        <pose>0 0 0 1.570796326794896 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.20000000000000001</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rear_right_roll" type="revolute">
+      <pose relative_to="base_link">-0.4 -0.4 0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rear_right_wheel">
+      <pose relative_to="rear_right_roll">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0054166666666700001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.0054166666666700001</izz>
+        </inertia>
+      </inertial>
+      <collision name="rear_right_wheel_collision">
+        <pose>0 0 0 1.570796326794896 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.20000000000000001</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <plugin name="ignition::gazebo::systems::AckermannSteering" filename="ignition-gazebo-ackermann-steering-system">
+      <left_joint>rear_left_roll</left_joint>
+      <right_joint>rear_right_roll</right_joint>
+      <left_steering_joint>front_left_steer</left_steering_joint>
+      <right_steering_joint>front_right_steer</right_steering_joint>
+      <wheel_base>0.79</wheel_base>
+      <wheel_separation>0.8</wheel_separation>
+      <kingpin_width>0.8</kingpin_width>
+      <wheel_radius>0.2</wheel_radius>
+      <steering_limit>0.6686135679278209</steering_limit>
+      <topic>/sim/cmd_vel</topic>
+      <odom_topic>/sim/odom</odom_topic>
+      <tf_topic>/sim/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <odom_publish_frequency>30</odom_publish_frequency>
+      <min_velocity>-0.2</min_velocity>
+      <max_velocity>0.8</max_velocity>
+    </plugin>
+    <frame name="laser_mount" attached_to="base_link">
+      <pose>0 0 0.85 0 -0 0</pose>
+    </frame>
+    <frame name="laser_frame" attached_to="laser_mount" />
+    <pose>0 0 0 0 0 0</pose>
+  </model>
+</sdf>

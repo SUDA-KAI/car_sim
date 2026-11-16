@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "domain": 74,
+  "healthy_command_forwarded": true,
+  "lost_position_sources_stop_motion": true,
+  "fresh_ekf_prediction_does_not_bypass_gate": true,
+  "no_gazebo_or_hardware": true
+}

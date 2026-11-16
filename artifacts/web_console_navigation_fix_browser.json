@@ -1,0 +1,38 @@
+{
+  "browser": "Firefox BiDi",
+  "default_yaw": -0.5684464642686269,
+  "pose_yaw": -0.5684464642686269,
+  "preview_did_not_move": true,
+  "onePoint": {
+    "mission": "succeeded",
+    "completed": 1,
+    "pose": {
+      "x": 1.1227920925810144,
+      "y": 11.625213450242082,
+      "z": 0,
+      "yaw": -0.5144854046091213
+    }
+  },
+  "failed_goal_did_not_move": true,
+  "corrected_goal_preview": {
+    "length": 17.62335584525402,
+    "seconds": 9.208883478000644,
+    "yaw": -2.8169614127188476,
+    "mission": "succeeded"
+  },
+  "layouts": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

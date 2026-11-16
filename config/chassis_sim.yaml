@@ -1,0 +1,12 @@
+# Commissioned STM32 GET_INFO reports a 0.90 m wheelbase, 45 deg steering
+# and 1.0 m/s drive limit. Operational limits match robot_bringup teleop.
+# Track and tire radius still come from the simulation CAD, not GET_INFO.
+wheelbase_m: 0.90
+track_m: 0.80
+wheel_radius_m: 0.20
+max_forward_mps: 0.50
+max_reverse_mps: 0.20
+max_center_steer_deg: 40.0
+firmware_center_steer_deg: 45.0
+command_timeout_sec: 0.30
+steering_settle_rad: 0.035

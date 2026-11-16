@@ -1,0 +1,20 @@
+{
+  "result": "passed",
+  "roll_90_current_bottom_percent": [
+    50,
+    0,
+    50
+  ],
+  "original_O_world_m": [
+    0,
+    0,
+    0.495
+  ],
+  "bottom_O_world_m": [
+    0,
+    -0.095,
+    0.29
+  ],
+  "mesh_pose_unchanged": true,
+  "arbitrary_tilt_box_minimum_checks": 3
+}

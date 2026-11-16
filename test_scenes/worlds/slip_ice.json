@@ -1,0 +1,45 @@
+{
+  "map": "../maps/slip_ice.yaml",
+  "world": "slip_ice.sdf",
+  "spawn": [
+    -3.0,
+    0.0,
+    0.0
+  ],
+  "route": "../routes/slip_ice.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "nav_params": "../nav2_tests.yaml",
+  "name": "slip_ice",
+  "kind": "slip",
+  "slope_degrees": 0.0,
+  "patch_friction": 0.005,
+  "obstacles": [
+    [
+      5,
+      -6.8,
+      22,
+      0.3
+    ],
+    [
+      5,
+      6.8,
+      22,
+      0.3
+    ],
+    [
+      -5.8,
+      0,
+      0.3,
+      14
+    ],
+    [
+      15.8,
+      0,
+      0.3,
+      14
+    ]
+  ],
+  "description": "Coplanar x=[0,7] patch with mu=mu2=0.005; use slip_normal as A/B control. Not a calibrated tyre model.",
+  "baseline": "Ideal ground-truth localization; static-map obstacles. Physical model, not field validation."
+}

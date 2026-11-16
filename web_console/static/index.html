@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f2029">
+  <meta name="description" content="本地 Gazebo 仿真、地图管理与 ROS 2 导航可视化工作台">
+  <title>NAV STUDIO · 仿真导航工作台</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Nav Studio 首页"><span class="brand-mark">N<span>↗</span></span><span>NAV<span class="brand-light"> STUDIO</span><small>ROBOTICS WORKSPACE</small></span></a>
+    <nav class="topnav" aria-label="工作区"><button class="nav-item active" data-tab="workspace">仿真工作台</button><button class="nav-item" data-tab="maps">地图资源</button><button class="nav-item" data-tab="logs">运行日志 <span id="error-count" class="count hidden">0</span></button></nav>
+    <div class="top-right"><span class="connection" id="connection"><i></i>正在连接</span><span class="divider"></span><span class="avatar">SIM</span></div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="library">
+      <div class="section-eyebrow">ENVIRONMENT LIBRARY <span id="map-count">—</span></div>
+      <div class="section-heading"><h2>探索你的场景</h2><button class="icon-button" id="refresh-maps" title="刷新地图" aria-label="刷新地图">↻</button></div>
+      <p class="muted library-intro">从一张地图，开启一次探索。</p>
+      <label class="search"><span>⌕</span><input id="map-search" type="search" placeholder="搜索地图或场景…" aria-label="搜索地图"></label>
+      <div class="filter-row" id="filters"><button class="filter active" data-filter="全部">全部</button><button class="filter" data-filter="现场">现场</button><button class="filter" data-filter="窄道">窄道</button><button class="filter" data-filter="坡道">坡道</button><button class="filter" data-filter="摩擦">摩擦</button><button class="filter" data-filter="导入">导入</button></div>
+      <div id="map-list" class="map-list" aria-label="可用地图"><div class="loading-card">正在读取本机地图…</div></div>
+      <button class="import-button" id="import-open"><span>＋</span><div>导入自定义地图<small>YAML + PGM / PNG</small></div><span>↗</span></button>
+      <div class="sidebar-foot"><span class="tiny-dot"></span> 本地仿真环境 <span>ROS 2 HUMBLE</span></div>
+    </aside>
+
+    <main class="workspace">
+      <section class="workspace-title"><div><div class="section-eyebrow">SIMULATION / <span id="breadcrumb">WORKSPACE</span></div><h1 id="scene-title">仿真导航工作台</h1><p id="scene-description">正在载入场景…</p></div><span class="scene-badge" id="scene-category">地图场景</span></section>
+      <div class="health-strip"><div><i class="status-dot" id="gazebo-dot"></i>Gazebo <span id="gazebo-state">未启动</span></div><div><i class="status-dot" id="nav-dot"></i>Nav2 <span id="nav-state">等待启动</span></div><div class="health-domain">隔离域 <b id="domain">73</b></div><span class="runtime" id="runtime">SESSION 00:00</span></div>
+
+      <section class="map-viewport" id="viewport" aria-label="导航地图可视化">
+        <canvas id="map-canvas" aria-label="地图；选择目标模式后点击添加目标，拖动指定朝向" tabindex="0"></canvas>
+        <div class="viewport-top"><div class="map-heading"><span class="live-dot"></span><strong>导航视图</strong><span id="map-label">OCCUPANCY MAP</span></div><span class="view-badge" id="view-state">场景预览</span></div>
+        <div class="canvas-toolbar" role="toolbar" aria-label="地图工具"><button id="tool-pan" class="tool active" title="拖动地图" aria-label="拖动地图">✥</button><button id="tool-goal" class="tool" title="设置目标点" aria-label="设置目标点">◎</button><button id="tool-pose" class="tool" title="设置 AMCL 初始位姿" aria-label="设置 AMCL 初始位姿">➤</button><span></span><button id="zoom-in" class="tool" title="放大" aria-label="放大">＋</button><button id="zoom-out" class="tool" title="缩小" aria-label="缩小">−</button><button id="fit-map" class="tool" title="适应地图" aria-label="适应地图">⌗</button><button id="follow-car" class="tool" title="跟随车辆" aria-label="跟随车辆">⌖</button></div>
+        <div class="map-id"><span>MAP FRAME</span><strong id="map-dimensions">— × — m</strong><small id="map-resolution">— m / px</small></div>
+        <div class="north"><span>N</span>↑</div>
+        <div class="canvas-hint" id="canvas-hint">滚轮缩放 · 拖动平移 · 选择「◎」添加目标</div>
+        <div class="map-footer"><span id="cursor-position">X — &nbsp; Y —</span><div class="map-legend"><label><input type="checkbox" id="layer-path" checked><i class="legend-path"></i>规划路径</label><label><input type="checkbox" id="layer-scan" checked><i class="legend-scan"></i>激光</label><label><input type="checkbox" id="layer-trail" checked><i class="legend-trail"></i>轨迹</label></div><span id="scale-label">— m</span></div>
+        <div class="loading-overlay hidden" id="starting-overlay"><span class="spinner"></span><div><strong>正在唤醒仿真世界</strong><small>Gazebo 加载与 Nav2 初始化通常需要 30–60 秒</small></div></div>
+      </section>
+
+      <section class="telemetry-grid" aria-label="车辆实时数据"><div class="metric"><span>线速度 <small>VELOCITY</small></span><strong id="metric-speed">—<em>m/s</em></strong><div class="metric-bar"><i id="speed-bar"></i></div></div><div class="metric"><span>位置坐标 <small>POSITION</small></span><strong class="coordinates" id="metric-position">—<em>m</em></strong><p>map → base_link</p></div><div class="metric"><span>航向角 <small>HEADING</small></span><strong id="metric-yaw">—<em>°</em></strong><p id="metric-angular">角速度 — rad/s</p></div><div class="metric"><span>任务进度 <small>MISSION</small></span><strong id="metric-progress">—<em>目标点</em></strong><p id="metric-remaining">等待导航任务</p></div></section>
+      <section class="activity"><div><span class="tiny-dot"></span><strong>最新动态</strong><span id="latest-event">控制台准备就绪</span></div><button id="show-logs">查看全部 ↗</button></section>
+      <section class="log-panel hidden" id="log-panel"><div class="log-heading"><h2>运行日志</h2><div><label><input type="checkbox" id="errors-only"> 仅警告与错误</label><button class="text-button" id="download-logs">导出日志 ↓</button><button class="icon-button" id="close-logs" aria-label="收起日志">×</button></div></div><div class="log-lines" id="log-lines"></div></section>
+      <footer class="workspace-footer"><span>NAV STUDIO <i> / </i> 让每一次导航，都清晰可见。</span><span>GAZEBO FORTRESS <i>·</i> NAV2</span></footer>
+    </main>
+
+    <aside class="inspector">
+      <div class="inspector-header"><span class="section-eyebrow">CONTROL CENTER</span><h2>仿真控制</h2><span class="small-tag">本机</span></div>
+      <section class="control-section"><div class="subheading"><span class="step">01</span><h3>启动配置</h3><span class="muted">SIMULATION</span></div>
+        <fieldset id="settings"><label class="field-label" for="controller">路径跟踪控制器</label><select id="controller"><option value="scene">场景默认控制器</option><option value="mppi">MPPI · 预测控制</option><option value="teb">TEB · 时间弹性带</option></select><label class="field-label" for="localization">定位方式</label><select id="localization"><option value="auto">自动 · 跟随场景配置</option><option value="amcl">AMCL · 激光定位</option><option value="ground_truth">Gazebo 真值 · 测试基准</option></select><label class="field-label" for="planning-timeout">路径搜索时限（秒）</label><input id="planning-timeout" class="text-input" type="number" min="1" max="60" step="1" value="20"><div class="speed-label"><label class="field-label" for="max-speed">速度上限</label><span><b id="speed-value">0.30</b> m/s</span></div><input id="max-speed" type="range" min="0.05" max="0.8" step="0.05" value="0.3"><div class="range-labels"><span>0.05</span><span>0.80 m/s</span></div>
+        <label class="switch-row"><span>打开 Gazebo 三维窗口</span><input id="gui" type="checkbox" checked role="switch"><i></i></label><label class="switch-row"><span>启用 Nav2 自主导航</span><input id="nav-enabled" type="checkbox" checked role="switch"><i></i></label><details class="sensor-settings"><summary>传感器选项 <span>⌄</span></summary><label class="switch-row"><span>L2 激光雷达仿真</span><input id="use-l2" type="checkbox" checked role="switch"><i></i></label><label class="switch-row"><span>四路超声波仿真</span><input id="use-ultrasonic" type="checkbox" checked role="switch"><i></i></label></details></fieldset>
+        <button class="primary-button" id="start-sim"><span>▶</span> 启动仿真与导航 <span>↗</span></button><button class="stop-button hidden" id="stop-sim"><span>■</span> 停止仿真</button><p class="control-caption" id="control-caption">加载选中地图、小车模型与导航服务</p>
+      </section>
+
+      <section class="control-section mission-section"><div class="subheading"><span class="step">02</span><h3>导航任务</h3><span class="mission-badge" id="mission-status">待命</span></div><div class="mission-guide"><span>◎</span><p>在地图上点击添加目标<br><small>按住拖动，可指定到达朝向</small></p></div><div class="waypoint-header"><span>目标队列 <b id="waypoint-count">00</b></span><div><button class="text-button" id="load-route">载入预设</button><button class="text-button" id="clear-waypoints">清空</button></div></div><ol class="waypoints" id="waypoints"><li class="empty-queue">还没有目标点，去地图上选一个吧</li></ol><div class="route-mode"><label for="route-mode">任务方式</label><select id="route-mode"><option value="waypoints">逐点到达</option><option value="through_poses">连续经过目标点</option></select></div><button id="preview-path" class="preview-button" disabled>检查路径 · 不启动车辆</button><p id="preview-message" class="preview-message">空闲像素不等于可达，先用 Nav2 检查实际路径</p><div class="mission-actions"><button id="navigate" class="navigate-button" disabled>开始导航 →</button><button id="cancel-nav" class="cancel-button" title="取消当前导航任务" disabled>取消任务</button></div><p class="mission-note" id="navigation-note">启动仿真后，等待定位与 Nav2 就绪</p></section>
+      <section class="sensor-panel"><div class="subheading"><span class="tiny-dot"></span><h3>超声波测距</h3><span class="muted">LIVE</span></div><div class="range-grid" id="ranges"><div><span>后右 · 01</span><b>—</b></div><div><span>前右 · 02</span><b>—</b></div><div><span>前左 · 03</span><b>—</b></div><div><span>后左 · 04</span><b>—</b></div></div><p>— 表示无新回波或无有效测量</p></section>
+      <div class="inspector-note"><span>◇</span><p>仿真独立运行于专用 ROS 域<br><small>地图、路径与位姿均采用 map 坐标系</small></p></div>
+    </aside>
+  </div>
+
+  <dialog id="import-dialog"><form id="import-form"><div class="dialog-top"><div><span class="section-eyebrow">CREATE A NEW WORLD</span><h2>把你的地图，变成仿真世界</h2></div><button type="button" class="icon-button dialog-close" aria-label="关闭">×</button></div><p class="muted">导入 ROS 占据地图，自动生成可用于导航的 Gazebo 场景。</p><label class="field-label" for="import-title">场景名称</label><input class="text-input" id="import-title" placeholder="例如：一楼实验室" maxlength="60" required><div class="file-grid"><label class="file-drop">▤<strong>地图配置</strong><span id="yaml-name">选择 .yaml / .yml</span><input id="import-yaml" type="file" accept=".yaml,.yml" required></label><label class="file-drop">▧<strong>地图图像</strong><span id="image-name">选择 .pgm / .png</span><input id="import-image" type="file" accept=".pgm,.png" required></label></div><div class="import-height"><label class="field-label" for="wall-height">生成墙体高度</label><input class="text-input" id="wall-height" type="number" min="0.2" max="5" step="0.1" value="1.5"><span>m</span></div><p class="import-note">支持 trinary 地图，自动保留分辨率与原点；出生位置需有 0.8 m 空闲余量。二维墙体挤出不包含真实地形高程。</p><div class="dialog-actions"><button class="secondary-button dialog-close" type="button">返回工作台</button><button class="primary-button" type="submit" id="import-submit">生成仿真场景 ↗</button></div><p id="import-error" role="alert"></p></form></dialog>
+  <div id="toasts" aria-live="polite"></div>
+</body>
+</html>

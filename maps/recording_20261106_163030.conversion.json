@@ -1,0 +1,30 @@
+{
+  "source_recording": "20261106_161101_pointlio_map_cd4975",
+  "width": 252,
+  "height": 266,
+  "resolution_m": 0.1,
+  "origin": [
+    -11.8,
+    -7.7,
+    0.0
+  ],
+  "obstacle_height_m": [
+    -0.35,
+    1.0
+  ],
+  "height_filter_source": "recorded/20261106_161101_pointlio_map_cd4975/pointlio_loop_closed/height_filter_report.json",
+  "height_filter_source_in_bundle": false,
+  "height_reference": "initial lidar frame; not height above ground",
+  "points_before_height_filter": 72482,
+  "points_after_height_filter": 19721,
+  "temporal_min_frames": 10,
+  "spatial_min_neighbors": 10,
+  "minimum_vertical_cell_points": 2,
+  "minimum_xy_cell_neighbors": 3,
+  "vehicle_swept_radius_m": 0.75,
+  "vehicle_swept_region_forced_free": true,
+  "free_cells": 8630,
+  "occupied_cells": 2351,
+  "unknown_cells": 56051,
+  "policy": "仅已行驶轨迹走廊标为空闲；其余未观测区域保持未知"
+}

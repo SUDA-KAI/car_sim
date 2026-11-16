@@ -1,0 +1,1 @@
+sim_time,x,y,z,roll_deg,pitch_deg,yaw,true_vx,true_vy,true_vz,true_wz,wheel_vx,command_vx,command_wz,wheel_minus_true_vx,wheel_pose_error_m,plan_distance_m,lateral_offset_m,estimated_side_clearance_m,wheel_sweep_clearance_bound_m

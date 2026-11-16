@@ -1,0 +1,56 @@
+{
+  "scene": "narrow_turns",
+  "clear_width_m": 1.7,
+  "nominal_vehicle_width_m": 0.9,
+  "max_abs_center_offset_m": 0.377620018717967,
+  "max_abs_center_offset_forward_settled_m": null,
+  "min_nominal_body_side_clearance_m": 0.022153774948883154,
+  "min_wheel_sweep_clearance_bound_m": -0.1007584204994747,
+  "potential_nominal_body_overlap_samples": 0,
+  "max_abs_heading_deg": 68.9620586333817,
+  "max_abs_heading_error_deg": 9.193749513810154,
+  "steering_command_sign_reversals": 17,
+  "note": "Projected 3D envelope clearance estimate against straight/stadium walls; wheel bound conservatively includes all steering angles up to 0.75 rad. Not a physical contact sensor or real-vehicle safety guarantee.",
+  "patrol": {
+    "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+    "requested_loops": 1,
+    "result": "failed",
+    "waypoints": [
+      {
+        "lap": 1,
+        "index": 1,
+        "goal": {
+          "x": 2.0,
+          "y": -3.0,
+          "yaw": 0.0
+        },
+        "result": "SUCCEEDED",
+        "sim_duration_s": 24.136
+      },
+      {
+        "lap": 1,
+        "index": 2,
+        "goal": {
+          "x": 6.0,
+          "y": -3.0,
+          "yaw": 0.0
+        },
+        "result": "SUCCEEDED",
+        "sim_duration_s": 25.37
+      },
+      {
+        "lap": 1,
+        "index": 3,
+        "goal": {
+          "x": 8.121320343559642,
+          "y": -2.1213203435596424,
+          "yaw": 0.7853981633974483
+        },
+        "result": "FAILED",
+        "sim_duration_s": 41.046
+      }
+    ],
+    "wall_duration_s": 260.8844615750004,
+    "reason": "Waypoint 3 failed; patrol stopped"
+  }
+}

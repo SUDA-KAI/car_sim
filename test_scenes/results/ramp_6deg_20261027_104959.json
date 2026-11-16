@@ -1,0 +1,16 @@
+{
+  "scene": "ramp_6deg",
+  "samples": 583,
+  "sim_duration_s": 59.364000000000004,
+  "localization": "ideal ground truth unless explicitly overridden",
+  "max_abs_pitch_deg": 6.000000305244214,
+  "max_abs_roll_deg": 0.33814729138295707,
+  "max_height_m": 0.4204169253374136,
+  "wheel_speed_gap_rms": 0.0058155258484841625,
+  "max_abs_wheel_speed_gap": 0.020945630936125892,
+  "max_wheel_pose_error_m": 0.17436049956140245,
+  "max_plan_distance_m": 0.05158050010530771,
+  "true_distance_m": 15.95093406636492,
+  "wheel_distance_m": 15.975641465995988,
+  "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+}

@@ -1,0 +1,185 @@
+# Draft assembly frames; not applied to hardware or simulation.
+third_crossbar:
+  parent: base_link
+  x: 0.08999999999999997
+  y: 0
+  z: 0.495
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+unilidar_lidar:
+  parent: third_crossbar
+  x: 0
+  y: 0
+  z: 0.43400000000000005
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+camera_left_link:
+  parent: third_crossbar
+  x: 0
+  y: 0.124
+  z: 0.39149999999999996
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+camera_left_link_optical:
+  parent: camera_left_link
+  x: 0
+  y: 0
+  z: 0
+  roll: -1.5707963267948966
+  pitch: 0.0
+  yaw: -1.5707963267948966
+camera_right_link:
+  parent: third_crossbar
+  x: 0.010000000000000002
+  y: -0.124
+  z: 0.39149999999999996
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+camera_right_link_optical:
+  parent: camera_right_link
+  x: 0
+  y: 0
+  z: 0
+  roll: -1.5707963267948966
+  pitch: 0.0
+  yaw: -1.5707963267948966
+imu_link:
+  parent: third_crossbar
+  x: 0
+  y: 0
+  z: 0.15000000000000002
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0
+ultrasonic_1:
+  parent: third_crossbar
+  x: -0.5499999999999999
+  y: -0.47500000000000003
+  z: -0.0050000000000000044
+  roll: 0.0
+  pitch: 0.0
+  yaw: -1.5707963267948966
+ultrasonic_2:
+  parent: third_crossbar
+  x: 0.4
+  y: -0.47500000000000003
+  z: -0.0050000000000000044
+  roll: 0.0
+  pitch: 0.0
+  yaw: -1.5707963267948966
+ultrasonic_3:
+  parent: third_crossbar
+  x: 0.4
+  y: 0.47500000000000003
+  z: -0.0050000000000000044
+  roll: 0.0
+  pitch: 0.0
+  yaw: 1.5707963267948966
+ultrasonic_4:
+  parent: third_crossbar
+  x: -0.5499999999999999
+  y: 0.47500000000000003
+  z: -0.0050000000000000044
+  roll: 0.0
+  pitch: 0.0
+  yaw: 1.5707963267948966
+main_bracket:
+  parent: third_crossbar
+  x: 0.09499999880790719
+  y: -8.326672684688674e-17
+  z: 0.15499999821186056
+  roll: 1.5707963267948961
+  pitch: 5.551115123125783e-17
+  yaw: -1.5707963267948966
+l2_bracket:
+  parent: third_crossbar
+  x: -3.0177839317386495e-10
+  y: -4.154053980157967e-09
+  z: 0.43400000000000005
+  roll: 3.141592653589793
+  pitch: -1.232595164407831e-32
+  yaw: 1.9619246121668257
+camera_bracket:
+  parent: third_crossbar
+  x: -0.018400000408291817
+  y: 0.0945000061392784
+  z: 0.3915
+  roll: 1.570796326794897
+  pitch: -1.1102230246251565e-16
+  yaw: 1.5707963267948966
+camera_right_bracket:
+  parent: third_crossbar
+  x: -0.018639478821756702
+  y: -0.09441791351046053
+  z: 0.3917645457576774
+  roll: 1.5691955374421784
+  pitch: 0.005394519162971168
+  yaw: 1.5663984642139948
+ultrasonic_1_model:
+  parent: third_crossbar
+  x: -0.5500000037252902
+  y: -0.4300000037252903
+  z: 0.0110000017285347
+  roll: 3.141592653589793
+  pitch: 6.162975822039155e-33
+  yaw: 0.0
+ultrasonic_2_model:
+  parent: third_crossbar
+  x: 0.395
+  y: -0.4300000037252903
+  z: 0.0110000017285347
+  roll: 3.141592653589793
+  pitch: -1.2703590903906013e-33
+  yaw: 7.778705969072964e-50
+ultrasonic_3_model:
+  parent: third_crossbar
+  x: 0.395
+  y: 0.43
+  z: 0.0110000017285347
+  roll: -3.141592653589793
+  pitch: -1.2703590903906013e-33
+  yaw: -7.778705969072964e-50
+ultrasonic_4_model:
+  parent: third_crossbar
+  x: -0.5499999999999999
+  y: 0.43
+  z: 0.0110000017285347
+  roll: -3.141592653589793
+  pitch: -2.0138304528209138e-17
+  yaw: -1.2331155090362985e-33
+ultrasonic_1_body:
+  parent: third_crossbar
+  x: -0.5500000037252902
+  y: -0.4300000037252903
+  z: 0.003
+  roll: 3.141592653589793
+  pitch: -1.4855558128253282e-17
+  yaw: 1.8192811711312836e-33
+ultrasonic_2_body:
+  parent: third_crossbar
+  x: 0.395
+  y: -0.4300000037252903
+  z: 0.003
+  roll: 3.141592653589793
+  pitch: 1.265837699344445e-16
+  yaw: -1.550204086742224e-32
+ultrasonic_3_body:
+  parent: third_crossbar
+  x: 0.395
+  y: 0.43
+  z: 0.0030000000000000027
+  roll: 3.141592653589793
+  pitch: 1.5407439555097887e-33
+  yaw: -3.141592653589793
+ultrasonic_4_body:
+  parent: third_crossbar
+  x: -0.5499999999999999
+  y: 0.43
+  z: 0.003
+  roll: -3.141592653589793
+  pitch: -6.813789755110163e-17
+  yaw: -3.141592653589793

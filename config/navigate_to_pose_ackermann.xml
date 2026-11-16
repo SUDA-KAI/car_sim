@@ -1,0 +1,38 @@
+<!--
+  Ackermann-safe variant of Nav2's Humble navigate-to-pose tree.
+  It keeps replanning, costmap clearing, waiting and straight backup recovery,
+  but omits Spin because an Ackermann chassis cannot rotate in place.
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithReplanning">
+        <!-- 静态全局地图无需每秒重算；降低重规划频率，避免相邻 Reeds-Shepp
+             路径的细小差异持续改变前轮目标角。TEB 仍以 10 Hz 做局部轨迹优化。 -->
+        <RateController hz="0.25">
+          <RecoveryNode number_of_retries="1" name="ComputePathToPose">
+            <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+            <ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="FollowPath"/>
+          <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
+        </RecoveryNode>
+      </PipelineSequence>
+      <ReactiveFallback name="RecoveryFallback">
+        <GoalUpdated/>
+        <RoundRobin name="RecoveryActions">
+          <!-- Ackermann 底盘卡住后优先直线后退腾出转向空间；BackUp
+               自带局部代价地图碰撞预测，不会盲目撞向后方障碍。 -->
+          <BackUp backup_dist="0.35" backup_speed="0.10"/>
+          <Sequence name="ClearingActions">
+            <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
+            <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
+          </Sequence>
+          <Wait wait_duration="5"/>
+        </RoundRobin>
+      </ReactiveFallback>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

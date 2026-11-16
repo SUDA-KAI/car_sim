@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "checks": [
+    "All five real STL assets rendered with local dependencies",
+    "Millimetre inputs / RPY and reparenting preserve world pose",
+    "Save writes disk, persists installation notes and reloads",
+    "Unsaved local browser draft recovered across refresh",
+    "Real surface clicks create persisted points; face alignment gives coincident points and opposite normals",
+    "Browser and backend transforms agree after alignment; URDF/YAML/snapshot export succeeds"
+  ]
+}

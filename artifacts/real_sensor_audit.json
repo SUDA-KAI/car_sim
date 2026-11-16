@@ -1,0 +1,65 @@
+{
+  "camera_index_mapping": {
+    "0": "left",
+    "1": "right"
+  },
+  "duration": 8.192155545999867,
+  "topics": {
+    "/pointlio/odometry": {
+      "count": 83,
+      "frame": "pointlio_map",
+      "child": "pointlio_imu",
+      "position": [
+        -0.014335411447661005,
+        -0.040543202238023254,
+        0.001723642595119938
+      ]
+    },
+    "/pointlio/cloud_registered": {
+      "count": 83,
+      "frame": "pointlio_map",
+      "points": 1179,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "intensity",
+        "normal_x",
+        "normal_y",
+        "normal_z",
+        "curvature"
+      ]
+    },
+    "/unilidar/imu": {
+      "count": 1477,
+      "frame": "unilidar_imu"
+    },
+    "/unilidar/cloud": {
+      "count": 73,
+      "frame": "unilidar_lidar",
+      "points": 5086,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "intensity",
+        "ring",
+        "time"
+      ]
+    },
+    "/usb_camera_0/image_raw/compressed": {
+      "count": 172,
+      "frame": "usb_camera_0_optical_frame",
+      "format": "bgr8; jpeg compressed bgr8",
+      "width": 1920,
+      "height": 1080
+    },
+    "/usb_camera_1/image_raw/compressed": {
+      "count": 174,
+      "frame": "usb_camera_1_optical_frame",
+      "format": "bgr8; jpeg compressed bgr8",
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}

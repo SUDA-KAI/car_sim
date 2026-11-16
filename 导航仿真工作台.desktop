@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=NAV STUDIO 仿真导航工作台
+Comment=地图管理、Gazebo 仿真与 Nav2 导航可视化
+Exec=/home/a/ros2_ws/gz_sim/run_web_console.sh --open
+Path=/home/a/ros2_ws/gz_sim
+Terminal=true
+Icon=applications-engineering
+Categories=Development;

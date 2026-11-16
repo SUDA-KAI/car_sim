@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "matched_stamp_pairs": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64
+  },
+  "no_echo_conversions_checked": 0,
+  "domain": 42,
+  "read_only": true
+}

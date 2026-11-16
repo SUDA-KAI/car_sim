@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="unitree_l2_visual">
+  <!--Visual mounting description. No invented sensor mass/inertia or LiDAR simulation plugin.-->
+  <link name="unilidar_lidar">
+    <visual name="unitree_l2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/a/ros2_ws/gz_sim/models/unitree_l2/upstream/meshes/l2_lidar.stl" scale="1 1 1" />
+      </geometry>
+      <material name="l2_dark">
+        <color rgba=".10 .10 .10 1" />
+      </material>
+    </visual>
+  </link>
+</robot>

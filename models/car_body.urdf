@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="uniform_car_body">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0171146665219 4.94093599851e-08 0.258349840803" rpy="0 0 0" />
+      <mass value="100" />
+      <inertia ixx="13.0822706525" ixy="2.95115518344e-08" ixz="-0.0521079351701" iyy="15.681770595" iyz="2.23623562851e-07" izz="25.6335992715" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/car_body_m.stl" />
+      </geometry>
+      <material name="body_blue">
+        <color rgba="0.12 0.45 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.2475" rpy="0 0 0" />
+      <geometry>
+        <box size="1.2 0.9 0.495" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

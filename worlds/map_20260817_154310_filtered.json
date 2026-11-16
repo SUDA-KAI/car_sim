@@ -1,0 +1,13 @@
+{
+  "map": "../maps/map_20260817_154310_filtered.yaml",
+  "world": "map_20260817_154310_filtered.sdf",
+  "spawn": [
+    0.4164,
+    12.0758,
+    -0.52
+  ],
+  "obstacle_boxes": 3043,
+  "resolution": 0.02,
+  "wall_height": 1.5,
+  "note": "2D extrusion; unknown cells are not reconstructed; not measured elevation."
+}

@@ -1,0 +1,13 @@
+{
+  "map": "../maps/recording_20261106_163030.yaml",
+  "world": "recording_20261106_163030.sdf",
+  "spawn": [
+    6.95,
+    13.25,
+    0.0
+  ],
+  "obstacle_boxes": 533,
+  "resolution": 0.1,
+  "wall_height": 1.5,
+  "note": "2D extrusion; unknown cells are not reconstructed; not measured elevation."
+}

@@ -1,0 +1,22 @@
+FROM osrf/ros:humble-desktop
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    ROS_DISTRO=humble \
+    LIBGL_ALWAYS_SOFTWARE=1 \
+    PYTHONUNBUFFERED=1
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ignition-fortress \
+      ros-humble-ros-gz-bridge \
+      ros-humble-navigation2 \
+      ros-humble-nav2-bringup \
+      ros-humble-nav2-mppi-controller \
+      ros-humble-robot-localization \
+      ros-humble-slam-toolbox \
+      ros-humble-joy \
+      ros-humble-ackermann-msgs \
+      python3-numpy python3-scipy python3-opencv python3-yaml python3-pil \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/patrol_nav
+COPY . /opt/patrol_nav
+RUN chmod +x run_server_nav.sh run_sim.sh
+CMD ["./run_server_nav.sh", "narrow_turns"]

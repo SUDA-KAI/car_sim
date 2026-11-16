@@ -1,0 +1,24 @@
+sim_joy:
+  ros__parameters:
+    device_id: 0
+    device_name: ""
+    deadzone: 0.0
+    autorepeat_rate: 20.0
+    sticky_buttons: false
+    use_sim_time: false
+sim_joystick_control:
+  ros__parameters:
+    axis_speed: 1
+    axis_steering: 3
+    speed_sign: 1.0
+    steering_sign: 1.0
+    enable_button: 4
+    deadzone: 0.12
+    max_forward_speed: 0.5
+    max_reverse_speed: 0.2
+    max_steering_angle: 0.6981317008
+    wheelbase: 0.90
+    max_yaw_rate: 0.35
+    input_timeout: 0.35
+    publish_rate: 20.0
+    use_sim_time: false

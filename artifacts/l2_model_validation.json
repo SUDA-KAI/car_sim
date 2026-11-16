@@ -1,0 +1,38 @@
+{
+  "result": "passed",
+  "lidar_base_xyz_m": [
+    -0.06000000000000005,
+    0.0,
+    0.929
+  ],
+  "description_files": [
+    "models/unitree_l2/l2.urdf",
+    "models/unitree_l2/l2_mounted.urdf",
+    "models/patrol_car_with_sensors.urdf"
+  ],
+  "urdf_check": "All 3 files passed check_urdf",
+  "mesh_files_resolved": true,
+  "all_download_hashes_verified": true,
+  "existing_car_inertials_unchanged": true,
+  "source_assets_verified": 14,
+  "mesh": {
+    "triangles": 9734,
+    "bounds_min_m": [
+      -0.03773244097828865,
+      -0.03680037707090378,
+      0.00033000000985339284
+    ],
+    "bounds_max_m": [
+      0.037152137607336044,
+      0.03811213746666908,
+      0.06385445594787598
+    ],
+    "size_m": [
+      0.0748845785856247,
+      0.07491251826286316,
+      0.06352445483207703
+    ],
+    "note": "Mesh has a 0.33 mm minimum Z; preserve upstream geometry, do not add device height to the point-cloud origin"
+  },
+  "note": "URDF, geometry, hash and mounting checks only; no Gazebo 3D scan or hardware run."
+}

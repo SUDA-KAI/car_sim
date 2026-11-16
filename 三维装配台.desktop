@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=支架与传感器三维装配台
+Comment=编辑并保存小车支架与传感器安装关系
+Exec=/home/a/ros2_ws/gz_sim/run_assembly_editor.sh
+Path=/home/a/ros2_ws/gz_sim
+Terminal=false
+Icon=applications-engineering
+Categories=Development;

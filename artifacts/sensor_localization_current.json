@@ -1,0 +1,95 @@
+{
+  "mode": "sensors",
+  "bridge": [
+    {
+      "ros_topic_name": "/clock",
+      "gz_topic_name": "/clock",
+      "ros_type_name": "rosgraph_msgs/msg/Clock",
+      "gz_type_name": "ignition.msgs.Clock",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/localization/safe_cmd_vel",
+      "gz_topic_name": "/sim/cmd_vel",
+      "ros_type_name": "geometry_msgs/msg/Twist",
+      "gz_type_name": "ignition.msgs.Twist",
+      "direction": "ROS_TO_GZ"
+    },
+    {
+      "ros_topic_name": "/sim/l2/points",
+      "gz_topic_name": "/sim/l2/scan/points",
+      "ros_type_name": "sensor_msgs/msg/PointCloud2",
+      "gz_type_name": "ignition.msgs.PointCloudPacked",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/l2/imu",
+      "gz_topic_name": "/sim/l2/imu",
+      "ros_type_name": "sensor_msgs/msg/Imu",
+      "gz_type_name": "ignition.msgs.IMU",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/external/imu",
+      "gz_topic_name": "/sim/external/imu",
+      "ros_type_name": "sensor_msgs/msg/Imu",
+      "gz_type_name": "ignition.msgs.IMU",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/camera_left/image_ideal",
+      "gz_topic_name": "/sim/camera_left/image_ideal",
+      "ros_type_name": "sensor_msgs/msg/Image",
+      "gz_type_name": "ignition.msgs.Image",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/camera_right/image_ideal",
+      "gz_topic_name": "/sim/camera_right/image_ideal",
+      "ros_type_name": "sensor_msgs/msg/Image",
+      "gz_type_name": "ignition.msgs.Image",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/ultrasonic_1/scan",
+      "gz_topic_name": "/sim/ultrasonic_1/scan",
+      "ros_type_name": "sensor_msgs/msg/LaserScan",
+      "gz_type_name": "ignition.msgs.LaserScan",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/ultrasonic_2/scan",
+      "gz_topic_name": "/sim/ultrasonic_2/scan",
+      "ros_type_name": "sensor_msgs/msg/LaserScan",
+      "gz_type_name": "ignition.msgs.LaserScan",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/ultrasonic_3/scan",
+      "gz_topic_name": "/sim/ultrasonic_3/scan",
+      "ros_type_name": "sensor_msgs/msg/LaserScan",
+      "gz_type_name": "ignition.msgs.LaserScan",
+      "direction": "GZ_TO_ROS"
+    },
+    {
+      "ros_topic_name": "/sim/ultrasonic_4/scan",
+      "gz_topic_name": "/sim/ultrasonic_4/scan",
+      "ros_type_name": "sensor_msgs/msg/LaserScan",
+      "gz_type_name": "ignition.msgs.LaserScan",
+      "direction": "GZ_TO_ROS"
+    }
+  ],
+  "mounting": "/tmp/patrol_all_sensor_tf_n_948rxo.yaml",
+  "pointlio_config": null,
+  "stereo_calibration": "/home/a/ros2_ws/gz_sim/calibration/stereo_20261102_135012.yaml",
+  "calibration_sha256": "61c675617434287e70761bd51e3cc04841410d632eaac4e7e8cf8e6d36ab6250",
+  "baseline_m": 0.2471029205650454,
+  "camera_width": 384,
+  "camera_height": 216,
+  "camera_lidar_imu_extrinsics": "measured mounting TF, not joint calibration",
+  "runtime_nav_params": "/tmp/patrol_nav_ugtyaoqd.yaml",
+  "slam_config": "/home/a/ros2_ws/gz_sim/config/sensor_lap_slam.yaml",
+  "map_source": "online slam_toolbox, no preloaded world map",
+  "simulator_world": "/tmp/patrol_sensor_paced_0h9528tb.sdf",
+  "l2_config": "/tmp/patrol_mapping_l2_lzq1j4ht.yaml"
+}

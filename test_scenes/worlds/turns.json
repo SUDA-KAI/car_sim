@@ -1,0 +1,57 @@
+{
+  "map": "../maps/turns.yaml",
+  "world": "turns.sdf",
+  "spawn": [
+    -2.0,
+    -3.0,
+    0.0
+  ],
+  "route": "../routes/turns.yaml",
+  "has_ground_truth": true,
+  "localization": "ground_truth",
+  "nav_params": "../nav2_tests.yaml",
+  "name": "turns",
+  "kind": "turns",
+  "slope_degrees": 0.0,
+  "patch_friction": 1.0,
+  "obstacles": [
+    [
+      5,
+      -6.8,
+      22,
+      0.3
+    ],
+    [
+      5,
+      6.8,
+      22,
+      0.3
+    ],
+    [
+      -5.8,
+      0,
+      0.3,
+      14
+    ],
+    [
+      15.8,
+      0,
+      0.3,
+      14
+    ],
+    [
+      2,
+      0,
+      2,
+      2
+    ],
+    [
+      8,
+      1,
+      1.4,
+      3
+    ]
+  ],
+  "description": "Wide loop with 90-degree turns; two inner obstacles; minimum turning radius 1.5 m.",
+  "baseline": "Ideal ground-truth localization; static-map obstacles. Physical model, not field validation."
+}

@@ -1,0 +1,13 @@
+{
+  "type": "synthetic ROS topics and headless Firefox; no Gazebo physics",
+  "checks": [
+    "Missing sensor data is shown as unknown",
+    "10 cm on channel 2 triggers ROS Bool alarm and red browser warning",
+    "11 cm retains alarm; 13 cm clears hysteresis",
+    "Too close, no echo and invalid data remain distinct",
+    "Stale measurements cannot clear previous near alarm; UI flags stale",
+    "Scan/cloud decode, registered cloud accumulation and browser selector work; audio context enables",
+    "Narrow browser layout has no horizontal overflow"
+  ],
+  "passed": true
+}

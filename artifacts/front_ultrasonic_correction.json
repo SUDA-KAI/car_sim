@@ -1,0 +1,8 @@
+{
+  "backup": "gz_sim/assembly/backups/front_sonar_1p09m_20261030_125846",
+  "front_from_rear_m": 1.09,
+  "front_from_head_m": 0.11,
+  "front_base_x_m": 0.49,
+  "front_crossbar_x_m": 0.4,
+  "rear_from_rear_m": 0.14
+}

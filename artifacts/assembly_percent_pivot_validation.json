@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "checks": [
+    "Percent origin uses rotated part-local bounds; mesh, child and marked hole stay fixed",
+    "XYZ moves the chosen O; numeric rotation keeps O fixed",
+    "Gizmo rotation also keeps custom O fixed",
+    "Child coordinates refer to parent P; L2 editor origin does not redefine its physical frame",
+    "Percent origins persist through disk save/reload; physical export transforms match browser",
+    "Non-geometric reference frames stay fixed; invalid percent saves are rejected"
+  ]
+}

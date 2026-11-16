@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>仿真 · 雷达与近障监测</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#101920;color:#e8f0f5}body{margin:0 auto;padding:24px;max-width:1200px}header{display:flex;justify-content:space-between;align-items:center;gap:12px}h1{font-size:24px;margin:0}p{line-height:1.6;color:#adbdca}button,select{background:#243743;color:#edf6fb;border:1px solid #607885;border-radius:7px;padding:10px;font:inherit}button{cursor:pointer}#alarm{padding:20px;border:1px solid #c29742;background:#392f1b;border-radius:10px;margin:20px 0;font-size:20px}#alarm.near{background:#602528;border-color:#ff6e75}#alarm.clear{background:#153b35;border-color:#46bfa8}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card,section{background:#192731;border:1px solid #314856;border-radius:10px;padding:18px}.card strong{display:block;font-size:29px;margin:12px 0}.card.near{border-color:#ff6e75;background:#40272c}.detail{font-size:13px;color:#a6b9c7}section{margin-top:20px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px}canvas{display:block;width:100%;height:420px;background:#101c24;border-radius:6px;margin-top:15px}#connection{color:#e4bb6f}label{display:flex;align-items:center;gap:6px}footer{font-size:14px;color:#b7c5cf;line-height:1.8;margin-top:18px}@media(max-width:700px){body{padding:12px}.cards{grid-template-columns:1fr 1fr}header{align-items:flex-start;flex-direction:column}canvas{height:320px}}
+.camera-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.camera-grid img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#101c24;border-radius:7px}.camera-grid h2{font-size:17px}#localizationInfo{white-space:pre-wrap;line-height:1.7}@media(max-width:700px){.camera-grid{grid-template-columns:1fr}}
+</style>
+<header><div><h1>雷达与近障监测</h1><p>Gazebo 仿真 · 独立仿真域 · 只读监测</p></div><button id="sound" type="button" aria-pressed="false">启用警报声音</button></header>
+<div id="connection" role="status">正在连接本地监测服务…</div>
+<div id="alarm" role="alert">等待超声波数据</div>
+<div class="cards" id="cards"></div>
+<section id="sensorLocalization" style="display:none"><h2>传感器定位与双目图像</h2><p id="localizationInfo">等待传感器估计</p><p id="patrolInfo">自动巡逻：尚未启动</p><div class="camera-grid"><div><h2>左相机 · 校正图像</h2><img id="leftImage" alt="等待左相机图像"><p id="leftImageInfo"></p></div><div><h2>右相机 · 校正图像</h2><img id="rightImage" alt="等待右相机图像"><p id="rightImageInfo"></p></div></div><div class="detail">传感器模式的地图原点由启动时估计定义；双目速度、激光里程计及独立 IMU 进入融合，超声波用于近障。一圈巡逻入口会自动生成导航目标；无需打开 RViz。</div></section>
+<section><div class="toolbar"><label>视图 <select id="view"><option value="/map">SLAM 在线地图（占据格俯视）</option><option value="/scan" selected>导航用二维激光 /scan</option><option value="/unilidar/cloud">L2 即时点云（俯视）</option><option value="/viewer/accumulated_map">配准点云累计图（俯视）</option><option value="/pointlio/local_map">Point-LIO 初始化地图（只发布一次）</option><option value="/pointlio/cloud_registered">Point-LIO 当前配准点云（俯视）</option></select></label><label>范围 <select id="extent"><option value="5">±5 m</option><option value="15" selected>±15 m</option><option value="30">±30 m</option><option value="auto">自动适应数据</option></select></label></div>
+<p id="viewInfo">等待数据</p><canvas id="plot" aria-label="雷达数据俯视图，横轴为 X，纵轴为 Y"></canvas>
+<div class="detail">巡逻时地图默认显示：青色为障碍，黄色为已行驶轨迹及目标连线，蓝点和箭头为车辆估计位置与朝向。仅显示所选话题的俯视投影，每帧最多 4,000 点。各视图使用自己的消息坐标系，不能直接叠加比较。X 向右、Y 向上；局部传感器视图中车头 +X 向右。</div></section>
+<footer>近障阈值 ≤ 0.10 m，超过 0.12 m 解除，防止警报反复跳变。距离从探头测量原点算起。上次近障后数据中断会保留警报，并显示数据过期。<br>1 后右 · 2 前右 · 3 前左 · 4 后左。四个探头朝车身两侧，车头和车尾中央有盲区。该功能不自动停车。<br>L2 即时点云和 /scan 不是建图结果。累计图保留最近最多 12,000 个 0.1 m 体素，仅用于显示；初始化地图话题只发布一次。基准测试入口查看 Point-LIO 需加 <code>pointlio:=true</code>。传感器入口已启用激光/视觉融合，并由 SLAM 在线提供导航地图。</footer>
+<script>
+const $=id=>document.getElementById(id), names=['后右','前右','前左','后左'];
+const kinds={missing:'未收到数据',invalid:'无效测量',stale:'数据过期 / 仿真暂停',too_close:'低于最小量程',no_echo:'量程内无回波',range:'有效距离'};
+let data=null,audio=null,sound=false,lastBeep=0,imageTick=0,viewPicked=false;
+$('sound').onclick=async()=>{try{audio??=new AudioContext();await audio.resume();sound=!sound;$('sound').textContent=sound?'关闭警报声音':'启用警报声音';$('sound').setAttribute('aria-pressed',String(sound));}catch(e){$('sound').textContent='浏览器无法启用声音';}};
+function beep(){if(!sound||!audio||Date.now()-lastBeep<1500)return;lastBeep=Date.now();const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=880;g.gain.value=.12;o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.18);}
+function draw(){const canvas=$('plot'),ctx=canvas.getContext('2d'),rect=canvas.getBoundingClientRect(),dpr=devicePixelRatio||1;canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.scale(dpr,dpr);const w=rect.width,h=rect.height,v=data?.views[$('view').value];let extent=Number($('extent').value),cx=0,cy=0;if(!extent){const pts=v?.points||[];let minX=0,maxX=0,minY=0,maxY=0;if(pts.length){minX=maxX=pts[0][0];minY=maxY=pts[0][1];}for(const p of pts){minX=Math.min(minX,p[0]);maxX=Math.max(maxX,p[0]);minY=Math.min(minY,p[1]);maxY=Math.max(maxY,p[1]);}cx=(minX+maxX)/2;cy=(minY+maxY)/2;extent=Math.max(2,(maxX-minX)/2,(maxY-minY)/2)*1.1;}const scale=(Math.min(w,h)-42)/(2*extent),px=x=>w/2+(x-cx)*scale,py=y=>h/2-(y-cy)*scale;ctx.strokeStyle='#2c414e';ctx.beginPath();ctx.moveTo(0,py(0));ctx.lineTo(w,py(0));ctx.moveTo(px(0),0);ctx.lineTo(px(0),h);ctx.stroke();ctx.fillStyle='#a8bdcb';ctx.fillText('X →   Y ↑    视野 ±'+extent.toFixed(1)+' m',12,20);
+if(!v){$('viewInfo').textContent=($('view').value.startsWith('/pointlio')||$('view').value.startsWith('/viewer'))?'尚无 Point-LIO 数据；请确认已启用 pointlio:=true，并等待初始化。':'尚无数据；请确认仿真已启动并正在运行。';return;}
+$('viewInfo').textContent=`${$('view').value} · 坐标系 ${v.frame} · ${v.points.length} 点 · ${v.age.toFixed(1)} s 前更新${v.age>2?'（数据过期或低频更新）':''}`;
+ctx.fillStyle=v.age>2?'#6e8790':'#58d8bf';for(const p of v.points){const x=px(p[0]),y=py(p[1]);if(x>=0&&x<w&&y>=0&&y<h)ctx.fillRect(x,y,2,2);}
+const route=data?.views['/localization/patrol_path'];if($('view').value==='/map'&&route?.frame===v.frame&&route.points.length){ctx.strokeStyle='#f4bf60';ctx.lineWidth=2;ctx.beginPath();route.points.forEach((p,i)=>{if(i)ctx.lineTo(px(p[0]),py(p[1]));else ctx.moveTo(px(p[0]),py(p[1]));});ctx.stroke();const p=route.points.at(-1);ctx.fillStyle='#f4bf60';ctx.beginPath();ctx.arc(px(p[0]),py(p[1]),5,0,Math.PI*2);ctx.fill();}
+const car=data?.localization?.patrol?.status?.pose;if($('view').value==='/map'&&car){const x=px(car.x),y=py(car.y);ctx.fillStyle='#62afff';ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#62afff';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+13*Math.cos(car.yaw),y-13*Math.sin(car.yaw));ctx.stroke();}}
+
+function renderLocalization(){
+ const active=data.domain==='43'||Object.keys(data.images||{}).length>0;
+ $('sensorLocalization').style.display=active?'block':'none';if(!active)return;
+ const labels={ready:'已就绪',scan_matching_lost:'激光匹配失败',inconsistent_lio:'与视觉观测不一致（已拒收）',stale_lio:'激光位姿过期（已拒收）',enabled:'定位与测距有效',blocked:'数据不足，已暂停运动',tracking:'跟踪有效',initializing:'初始化中',waiting_for_lio:'等待激光估计',waiting_for_images:'等待图像',frame_gap:'图像帧间隔过大',insufficient_stereo_features:'深度特征不足',tracking_lost:'跟踪丢失',processing_error:'处理失败'};
+ let lines=[];
+ for(const [source,label] of [['lio','激光里程计'],['visual','双目视觉'],['gate','导航指令']]){
+  const value=data.localization?.[source],state=value?.status;
+  lines.push(label+'：'+(state?(labels[state.state]||state.state):'尚无数据')+(state?.inliers?' · 内点 '+state.inliers:'')+(state?.frame_dt_s?' · 帧间隔 '+state.frame_dt_s.toFixed(2)+' s':'')+(typeof state?.source_age_s==='number'?' · 估计延迟 '+state.source_age_s.toFixed(2)+' s':'')+(value?.age>3?' · 状态过期':''));
+ }
+ const pose=data.odometry?.fused;
+ lines.push(pose?`融合里程计（${pose.frame}）：x ${pose.x.toFixed(3)} m · y ${pose.y.toFixed(3)} m · 朝向 ${(pose.yaw*180/Math.PI).toFixed(1)}° · 速度 ${pose.vx.toFixed(3)} m/s · ${pose.age.toFixed(1)} s 前更新`:'融合里程计：尚无数据');
+ $('localizationInfo').textContent=lines.join('\n');
+ const patrol=data.localization?.patrol;const task=patrol?.status;if(task&&!viewPicked){$('view').value='/map';$('extent').value='auto';viewPicked=true;}const taskLabels={initializing:'等待定位',running:'正在沿通道巡逻',returning:'正在返回起点',succeeded:'已完成一圈',failed:'任务失败',canceled:'已取消'};
+ $('patrolInfo').textContent=task?'自动巡逻：'+(taskLabels[task.state]||task.state)+' · 已行驶 '+(task.distance_m||0).toFixed(1)+' m · 完成 '+(task.completed_laps||0)+' 圈'+(task.reason?' · '+task.reason:'')+(patrol.age>4&&['initializing','running','returning'].includes(task.state)?' · 状态未更新':''):'自动巡逻：尚未启动（使用 run_sensor_lap.sh）';imageTick++;
+ for(const side of ['left','right']){
+  const frame=data.images?.[side];$(side+'ImageInfo').textContent=frame?`${frame.width} × ${frame.height} · ${frame.age.toFixed(1)} s 前更新`:'尚未收到图像';
+  if(frame&&imageTick%2===0)$(side+'Image').src='/api/image/'+side+'?t='+Date.now();
+ }
+}
+
+async function poll(){try{const response=await fetch('/api/state',{cache:'no-store'});if(!response.ok)throw Error(response.status);data=await response.json();$('connection').textContent='已连接 · Domain '+data.domain+' · 每 0.5 秒刷新';const unknown=data.unknown,near=data.alarm;$('alarm').className=near?'near':unknown?'':'clear';$('alarm').textContent=near?'⚠ 超声波近障警报'+(unknown?' · 同时有数据缺失或过期':''):unknown?'⚠ 数据未就绪：不能判断周围是否有障碍':'四路数据有效 · 当前无近障警报';$('cards').innerHTML=data.channels.map((c,i)=>`<div class="card ${c.near?'near':''}"><span>${c.channel} · ${names[i]}</span><strong>${c.distance===null?(c.kind==='too_close'?'过近':c.kind==='no_echo'?'无回波':'—'):(c.distance*100).toFixed(1)+' cm'}</strong><div class="detail">${kinds[c.kind]}${c.near?' · 近障警报':''}<br>${c.age===null?'等待消息':'接收于 '+c.age.toFixed(1)+' s 前'}</div></div>`).join('');if(near)beep();renderLocalization();draw();}catch(e){$('connection').textContent='连接中断：请检查仿真及 sensor_monitor 进程';$('alarm').className='';$('alarm').textContent='⚠ 监测服务断开，不能判断近障状态';data=null;draw();}finally{setTimeout(poll,500);}}
+$('view').onchange=()=>{viewPicked=true;draw();};$('extent').onchange=()=>{viewPicked=true;draw();};window.onresize=draw;poll();
+</script></html>

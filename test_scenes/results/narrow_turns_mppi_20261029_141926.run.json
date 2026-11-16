@@ -1,0 +1,8 @@
+{
+  "scene": "narrow_turns",
+  "controller": "mppi",
+  "controller_plugin": "nav2_mppi_controller::MPPIController",
+  "localization": "ground_truth",
+  "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+  "ros_domain_id": "61"
+}

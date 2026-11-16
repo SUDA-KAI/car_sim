@@ -1,0 +1,96 @@
+/**:
+  ros__parameters:
+    check_satu: true
+    common:
+      con_frame: false
+      con_frame_num: 1
+      cut_frame: false
+      cut_frame_time_interval: 0.1
+      imu_topic: /unilidar/imu
+      lid_topic: /unilidar/cloud
+      time_lag_imu_to_lidar: 0.0
+    cube_side_length: 100.0
+    filter_size_map: 0.2
+    filter_size_surf: 0.2
+    init_map_size: 10
+    mapping:
+      acc_cov_input: 0.1
+      acc_cov_output: 500.0
+      acc_norm: 9.81
+      b_acc_cov: 0.0001
+      b_gyr_cov: 0.0001
+      det_range: 30.0
+      extrinsic_R:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      extrinsic_T:
+      - 0.007698
+      - 0.014655
+      - -0.00667
+      extrinsic_est_en: false
+      fov_degree: 180.0
+      gravity:
+      - 0.0
+      - 0.0
+      - -9.81
+      gravity_align: true
+      gravity_init:
+      - 0.0
+      - 0.0
+      - -9.81
+      gyr_cov_input: 0.01
+      gyr_cov_output: 1000.0
+      imu_en: true
+      imu_meas_acc_cov: 0.1
+      imu_meas_omg_cov: 0.1
+      imu_time_inte: 0.005
+      lidar_meas_cov: 0.01
+      match_s: 81.0
+      plane_thr: 0.1
+      satu_acc: 30.0
+      satu_gyro: 35.0
+      start_in_aggressive_motion: false
+    odom_child_frame_id: lio_base_link
+    odom_header_frame_id: lio_odom
+    odometry:
+      publish_odometry_without_downsample: false
+    pcd_save:
+      file_path: pointlio_sim_map.pcd
+      interval: -1
+      pcd_save_en: false
+    point_filter_num: 3
+    preprocess:
+      blind: 0.5
+      lidar_type: 5
+      scan_line: 19
+      timestamp_unit: 0
+    prop_at_freq_of_imu: true
+    publish:
+      base_to_imu_rotation:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      base_to_imu_translation:
+      - 0.08230199999999997
+      - -0.014655
+      - 0.93567
+      path_en: true
+      scan_bodyframe_pub_en: false
+      scan_publish_en: true
+    runtime_pos_log_enable: false
+    space_down_sample: true
+    use_imu_as_input: false
+    use_sim_time: true

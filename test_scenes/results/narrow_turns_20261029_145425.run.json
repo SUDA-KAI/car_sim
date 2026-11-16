@@ -1,0 +1,8 @@
+{
+  "scene": "narrow_turns",
+  "controller": "scene",
+  "controller_plugin": "teb_local_planner::TebLocalPlannerROS",
+  "localization": "ground_truth",
+  "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+  "ros_domain_id": "42"
+}

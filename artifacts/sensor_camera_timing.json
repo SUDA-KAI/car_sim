@@ -1,0 +1,87 @@
+{
+  "status": [
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 5,
+      "lost_frames": 6,
+      "dropped_pairs": 0
+    }
+  ],
+  "right": [
+    45.152,
+    45.318,
+    45.484,
+    46.646,
+    47.476
+  ],
+  "left": [
+    46.148,
+    47.808
+  ]
+}

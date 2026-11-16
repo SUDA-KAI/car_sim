@@ -1,0 +1,1 @@
+"""Local Gazebo navigation console."""

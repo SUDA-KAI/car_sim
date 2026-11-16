@@ -1,0 +1,134 @@
+{
+  "official_repository": "https://github.com/unitreerobotics/unilidar_sdk2",
+  "official_commit": "0e3c51f512e6b8ff60b8c32f160b412cb48445c2",
+  "model_repository": "https://github.com/markgol/l2lidar_node",
+  "model_commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+  "files": [
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/LICENSE",
+      "local_path": "upstream/LICENSE",
+      "size_bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/README.md",
+      "local_path": "upstream/README.md",
+      "size_bytes": 48611,
+      "sha256": "64999e2fbdc20658e7e3f3cda029b5363d0393be4213733d95f2481205524b44"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "urdf/examples/l2_forward_mount.urdf",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/urdf/examples/l2_forward_mount.urdf",
+      "local_path": "upstream/urdf/examples/l2_forward_mount.urdf",
+      "size_bytes": 3109,
+      "sha256": "ac24e38f5b6943efc884cdac315cf87a91c67ac7c0932c8dec786dd80b9fe602"
+    },
+    {
+      "repository": "unitreerobotics/unilidar_sdk2",
+      "commit": "0e3c51f512e6b8ff60b8c32f160b412cb48445c2",
+      "source_path": "README_CN.md",
+      "url": "https://raw.githubusercontent.com/unitreerobotics/unilidar_sdk2/0e3c51f512e6b8ff60b8c32f160b412cb48445c2/README_CN.md",
+      "local_path": "official/README_CN.md",
+      "size_bytes": 10895,
+      "sha256": "3feb074bfd41e552fcfc873bd1e625494d0d65f15488b0f3d199eb6df7ecb145"
+    },
+    {
+      "repository": "unitreerobotics/unilidar_sdk2",
+      "commit": "0e3c51f512e6b8ff60b8c32f160b412cb48445c2",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unitreerobotics/unilidar_sdk2/0e3c51f512e6b8ff60b8c32f160b412cb48445c2/LICENSE",
+      "local_path": "official/LICENSE",
+      "size_bytes": 1503,
+      "sha256": "2b22fbf7fd2d6905791f56ff431bd58c5a95b0472f3e6895334acbffd9830ae4"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "licenses/Qt LICENSE LGPL.txt",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/licenses/Qt%20LICENSE%20LGPL.txt",
+      "local_path": "upstream/licenses/Qt LICENSE LGPL.txt",
+      "size_bytes": 26840,
+      "sha256": "6cd0b9b4d25b97ffa7f6ca3f1dc4380854cdbd839ea855900d48255a0949840a"
+    },
+    {
+      "repository": "unitreerobotics/unilidar_sdk2",
+      "commit": "0e3c51f512e6b8ff60b8c32f160b412cb48445c2",
+      "source_path": "docs/lidar_frame_definition.jpg",
+      "url": "https://raw.githubusercontent.com/unitreerobotics/unilidar_sdk2/0e3c51f512e6b8ff60b8c32f160b412cb48445c2/docs/lidar_frame_definition.jpg",
+      "local_path": "official/docs/lidar_frame_definition.jpg",
+      "size_bytes": 114289,
+      "sha256": "308fc6e4ccbd730427481eb72d7f15f4318883359f33e17550de4cdc617d8866"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "licenses/Unitree BSD-3 LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/licenses/Unitree%20BSD-3%20LICENSE.txt",
+      "local_path": "upstream/licenses/Unitree BSD-3 LICENSE.txt",
+      "size_bytes": 3133,
+      "sha256": "959f885407ec079ca2fc305874a52fc2996e0fc5ae9ad69bbd936099d6018921"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "licenses/README.md",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/licenses/README.md",
+      "local_path": "upstream/licenses/README.md",
+      "size_bytes": 40367,
+      "sha256": "9f6f9111826fc40ff2cefa6d1aa61dc718612abaf6a8c16d863a12126e39b4cc"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "Unitree BSD-3 LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/Unitree%20BSD-3%20LICENSE.txt",
+      "local_path": "upstream/Unitree BSD-3 LICENSE.txt",
+      "size_bytes": 3133,
+      "sha256": "959f885407ec079ca2fc305874a52fc2996e0fc5ae9ad69bbd936099d6018921"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "urdf/examples/l2_top_mount.urdf",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/urdf/examples/l2_top_mount.urdf",
+      "local_path": "upstream/urdf/examples/l2_top_mount.urdf",
+      "size_bytes": 2957,
+      "sha256": "542d8b02d1ed6ad38c8498debd97198fe047c0669c93f405783bb3f0b8f73936"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "l2lidar_node LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/l2lidar_node%20LICENSE.txt",
+      "local_path": "upstream/l2lidar_node LICENSE.txt",
+      "size_bytes": 35198,
+      "sha256": "c5bfd839748b70d4ed5f424525b94b26949176353ef99b5af77fec963baf7fb3"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "meshes/l2_lidar.stl",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/meshes/l2_lidar.stl",
+      "local_path": "upstream/meshes/l2_lidar.stl",
+      "size_bytes": 486784,
+      "sha256": "558d3b5dde2be8a7c2289717ebba13d390b7fc544761a70733a93195b131622c"
+    },
+    {
+      "repository": "markgol/l2lidar_node",
+      "commit": "83f62267c01adc22a13b923e867ecf4ca706a5e8",
+      "source_path": "licenses/l2lidar_node LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/markgol/l2lidar_node/83f62267c01adc22a13b923e867ecf4ca706a5e8/licenses/l2lidar_node%20LICENSE.txt",
+      "local_path": "upstream/licenses/l2lidar_node LICENSE.txt",
+      "size_bytes": 35198,
+      "sha256": "c5bfd839748b70d4ed5f424525b94b26949176353ef99b5af77fec963baf7fb3"
+    }
+  ]
+}

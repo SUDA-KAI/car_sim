@@ -1,0 +1,30 @@
+{
+  "measured_origin": {
+    "from_rear_m": 0.69,
+    "from_left_m": 0.45,
+    "height_m": 0.495
+  },
+  "measurement_vehicle_length_m": 1.5,
+  "mesh_vehicle_length_m": 1.2,
+  "current_third_crossbar_in_base_m": [
+    -0.06,
+    0,
+    0.495
+  ],
+  "candidate_if_rear_is_mesh_minus_x_end_m": [
+    0.09,
+    0,
+    0.495
+  ],
+  "candidate_difference_m": [
+    0.15,
+    0,
+    0
+  ],
+  "needs_confirmation": [
+    "rear datum and physical car length",
+    "whether to move reference frame or change display coordinates",
+    "whether sensor positions are authoritative relative to the crossbar or in the original base frame"
+  ],
+  "applied": false
+}

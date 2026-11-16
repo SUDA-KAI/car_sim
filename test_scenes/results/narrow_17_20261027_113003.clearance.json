@@ -1,0 +1,43 @@
+{
+  "scene": "narrow_17",
+  "clear_width_m": 1.7,
+  "nominal_vehicle_width_m": 0.9,
+  "max_abs_center_offset_m": 0.10024258156070437,
+  "max_abs_center_offset_forward_settled_m": 0.05087823626101601,
+  "min_nominal_body_side_clearance_m": 0.2691838138561862,
+  "min_wheel_sweep_clearance_bound_m": 0.1464396633910101,
+  "potential_nominal_body_overlap_samples": 0,
+  "max_abs_heading_deg": 4.865692885975557,
+  "steering_command_sign_reversals": 152,
+  "note": "Geometry clearance estimate on level floor; wheel bound conservatively includes all steering angles up to 0.75 rad. Not a physical contact sensor or real-vehicle safety guarantee.",
+  "patrol": {
+    "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_17.yaml",
+    "requested_loops": 1,
+    "result": "success",
+    "waypoints": [
+      {
+        "lap": 1,
+        "index": 1,
+        "goal": {
+          "x": 7.0,
+          "y": 0.0,
+          "yaw": 0.0
+        },
+        "result": "SUCCEEDED",
+        "sim_duration_s": 53.27
+      },
+      {
+        "lap": 1,
+        "index": 2,
+        "goal": {
+          "x": -3.0,
+          "y": 0.0,
+          "yaw": 0.0
+        },
+        "result": "SUCCEEDED",
+        "sim_duration_s": 83.862
+      }
+    ],
+    "wall_duration_s": 350.18028931699973
+  }
+}

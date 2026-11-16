@@ -1,0 +1,7 @@
+# Synthetic demo route only. Real-map waypoints must be chosen in its map frame.
+frame_id: map
+waypoints:
+  - {x: -5.0, y: -5.0, yaw: 0.0}
+  - {x: 5.0, y: -5.0, yaw: 1.57079632679}
+  - {x: 5.0, y: 5.0, yaw: 3.14159265359}
+  - {x: -5.0, y: 5.0, yaw: -1.57079632679}

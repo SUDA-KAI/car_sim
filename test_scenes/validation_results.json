@@ -1,0 +1,174 @@
+{
+  "conditions": "100 kg simplified rigid-wheel vehicle; ideal truth localization and static-map obstacles for navigation. Physics friction check uses identical open-loop command profiles.",
+  "navigation": {
+    "turns": {
+      "observed_successful_waypoints": 6,
+      "expected_waypoints": 6,
+      "result": "success",
+      "metrics": {
+        "scene": "turns",
+        "samples": 1863,
+        "sim_duration_s": 189.92399999999998,
+        "localization": "ideal ground truth unless explicitly overridden",
+        "max_abs_pitch_deg": 1.250532453489142e-07,
+        "max_abs_roll_deg": 2.0734219001929213e-08,
+        "max_height_m": 0.0016760000000000008,
+        "wheel_speed_gap_rms": 0.007862053116748235,
+        "max_abs_wheel_speed_gap": 0.031636949747379614,
+        "max_wheel_pose_error_m": 3.5811158366652633,
+        "max_plan_distance_m": 0.5119699572610655,
+        "true_distance_m": 55.04203067871132,
+        "wheel_distance_m": 54.950819949595534,
+        "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+      },
+      "log": "gz_sim/artifacts/test_turns.log"
+    },
+    "ramp_6deg": {
+      "observed_successful_waypoints": 4,
+      "expected_waypoints": 4,
+      "result": "success",
+      "metrics": {
+        "scene": "ramp_6deg",
+        "samples": 583,
+        "sim_duration_s": 59.364000000000004,
+        "localization": "ideal ground truth unless explicitly overridden",
+        "max_abs_pitch_deg": 6.000000305244214,
+        "max_abs_roll_deg": 0.33814729138295707,
+        "max_height_m": 0.4204169253374136,
+        "wheel_speed_gap_rms": 0.0058155258484841625,
+        "max_abs_wheel_speed_gap": 0.020945630936125892,
+        "max_wheel_pose_error_m": 0.17436049956140245,
+        "max_plan_distance_m": 0.05158050010530771,
+        "true_distance_m": 15.95093406636492,
+        "wheel_distance_m": 15.975641465995988,
+        "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+      },
+      "log": "gz_sim/artifacts/test_ramp6.log"
+    },
+    "ramp_12deg": {
+      "observed_successful_waypoints": 4,
+      "expected_waypoints": 4,
+      "result": "success",
+      "metrics": {
+        "scene": "ramp_12deg",
+        "samples": 521,
+        "sim_duration_s": 53.04,
+        "localization": "ground_truth",
+        "patrol_result": "success",
+        "max_abs_pitch_deg": 11.999970138742556,
+        "max_abs_roll_deg": 3.0770329557852807,
+        "max_height_m": 0.8515576273333878,
+        "wheel_speed_gap_rms": 0.012513011624260472,
+        "max_abs_wheel_speed_gap": 0.03181643663694533,
+        "max_wheel_pose_error_m": 0.36965757699090507,
+        "max_plan_distance_m": 0.12164278223246537,
+        "true_distance_m": 16.187220801169765,
+        "wheel_distance_m": 16.281041025102226,
+        "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+      },
+      "log": "gz_sim/artifacts/test_ramp12.log"
+    }
+  },
+  "friction_physics": {
+    "normal": {
+      "accelerate": {
+        "max_abs_wheel_speed_gap": 0.009999181452043399,
+        "rms_gap": 0.0016226069802550466,
+        "max_abs_lateral_speed": 2.392743595608258e-10,
+        "true_displacement_m": 6.750596855767008,
+        "finish_xyz": [
+          3.750596855767008,
+          2.3568119233785978e-08,
+          -1.572585553701974e-08
+        ]
+      },
+      "brake": {
+        "max_abs_wheel_speed_gap": 0.021500987213673994,
+        "rms_gap": 0.0037871571303391997,
+        "max_abs_lateral_speed": 2.392743595608258e-10,
+        "true_displacement_m": 0.3666011909242428,
+        "finish_xyz": [
+          4.117198046691251,
+          2.6150148307826507e-08,
+          -1.5742685482349092e-08
+        ]
+      },
+      "steer": {
+        "max_abs_wheel_speed_gap": 0.04065744857553896,
+        "rms_gap": 0.009972858453670371,
+        "max_abs_lateral_speed": 0.09760071384479616,
+        "true_displacement_m": 3.9934814283314326,
+        "finish_xyz": [
+          6.6021372914821,
+          3.1261751441060097,
+          -1.4177319780987007e-08
+        ]
+      },
+      "stop": {
+        "max_abs_wheel_speed_gap": 0.03373209491896462,
+        "rms_gap": 0.010516737143851266,
+        "max_abs_lateral_speed": 0.07881345108156532,
+        "true_displacement_m": 0.4028816167070221,
+        "finish_xyz": [
+          6.576886868368134,
+          3.528264702802862,
+          -1.1996514776086042e-08
+        ]
+      }
+    },
+    "ice": {
+      "accelerate": {
+        "max_abs_wheel_speed_gap": 0.01720081899488185,
+        "rms_gap": 0.0014827589960960145,
+        "max_abs_lateral_speed": 2.392743582540695e-10,
+        "true_displacement_m": 6.743398453485682,
+        "finish_xyz": [
+          3.7433984534856815,
+          2.3541547313295833e-08,
+          -1.5725855536356222e-08
+        ]
+      },
+      "brake": {
+        "max_abs_wheel_speed_gap": 0.5520277374532423,
+        "rms_gap": 0.44948061467462186,
+        "max_abs_lateral_speed": 8.586889345200344e-09,
+        "true_displacement_m": 1.6405744968651708,
+        "finish_xyz": [
+          5.383972950350852,
+          3.839502715467886e-08,
+          -1.572710700139092e-08
+        ]
+      },
+      "steer": {
+        "max_abs_wheel_speed_gap": 0.4822061421465934,
+        "rms_gap": 0.15818772774130768,
+        "max_abs_lateral_speed": 0.08557795019976165,
+        "true_displacement_m": 3.8001616448092768,
+        "finish_xyz": [
+          8.71719190374049,
+          1.8250698823855622,
+          -1.5730389031528304e-08
+        ]
+      },
+      "stop": {
+        "max_abs_wheel_speed_gap": 0.01780634632954664,
+        "rms_gap": 0.006887668469814643,
+        "max_abs_lateral_speed": 0.08267487507389566,
+        "true_displacement_m": 0.3905454739844006,
+        "finish_xyz": [
+          8.878410122536767,
+          2.1807866983752704,
+          -1.57262463810525e-08
+        ]
+      }
+    },
+    "brake_three_second_displacement_ratio": 4.475093200677003
+  },
+  "not_tested": [
+    "slip_low full patrol",
+    "slip_ice full patrol",
+    "slip_normal full patrol",
+    "AMCL slip recovery",
+    "real vehicle localization, tyres and actuator limits"
+  ]
+}

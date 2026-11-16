@@ -1,0 +1,31 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+  "requested_loops": 1,
+  "navigation_mode": "through_poses",
+  "result": "success",
+  "waypoints": [],
+  "segments": [
+    {
+      "lap": 1,
+      "result": "SUCCEEDED",
+      "sim_duration_s": 103.028,
+      "via_points": 21,
+      "segment": 1
+    },
+    {
+      "lap": 1,
+      "result": "SUCCEEDED",
+      "sim_duration_s": 75.356,
+      "via_points": 19,
+      "segment": 2
+    }
+  ],
+  "laps": [
+    {
+      "lap": 1,
+      "result": "SUCCEEDED",
+      "sim_duration_s": 178.408
+    }
+  ],
+  "wall_duration_s": 615.8404668400003
+}

@@ -1,0 +1,276 @@
+{
+  "source_revision": 3,
+  "source_saved_at": "2026-10-30T14:18:30.349977+08:00",
+  "assets": {
+    "body": {
+      "id": "body",
+      "label": "车身",
+      "scale": 1.0,
+      "offset_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "color": "#739cae",
+      "bounds_min_m": [
+        -0.6000000238418579,
+        -0.44999998807907104,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.6000000238418579,
+        0.44999998807907104,
+        0.4950000047683716
+      ],
+      "size_mm": [
+        1200.0000476837158,
+        899.9999761581421,
+        495.0000047683716
+      ],
+      "triangles": 16924,
+      "sha256": "e3e2e9b3c7a033d0ce7cc2c133b60cb3b8e45dcb4178ab11e9324b9f50860aeb",
+      "source_relative": "models/meshes/car_body_m.stl",
+      "mesh": "meshes/body.stl"
+    },
+    "l2": {
+      "id": "l2",
+      "label": "L2 雷达",
+      "scale": 1.0,
+      "offset_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "color": "#334354",
+      "bounds_min_m": [
+        -0.03773244097828865,
+        -0.03680037707090378,
+        0.00033000000985339284
+      ],
+      "bounds_max_m": [
+        0.037152137607336044,
+        0.03811213746666908,
+        0.06385445594787598
+      ],
+      "size_mm": [
+        74.8845785856247,
+        74.91251453757286,
+        63.524455938022584
+      ],
+      "triangles": 9734,
+      "sha256": "558d3b5dde2be8a7c2289717ebba13d390b7fc544761a70733a93195b131622c",
+      "source_relative": "models/unitree_l2/upstream/meshes/l2_lidar.stl",
+      "mesh": "meshes/l2.stl"
+    },
+    "l2_bracket": {
+      "id": "l2_bracket",
+      "label": "激光雷达 L2 支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.07500000047683716,
+        -0.07499999952316284,
+        1.734723475976807e-18
+      ],
+      "color": "#f4ab55",
+      "bounds_min_m": [
+        0.015000000953674316,
+        0.015022780418395996,
+        -1.734723475976807e-18
+      ],
+      "bounds_max_m": [
+        0.135,
+        0.1349772186279297,
+        0.089
+      ],
+      "size_mm": [
+        119.99999904632568,
+        119.95443820953369,
+        89.0
+      ],
+      "triangles": 4280,
+      "sha256": "3ca9678b754ca5828a7d7f5fac70f3c7c82eb975cec5d055ccda07e15d7c02a7",
+      "source_relative": "激光雷达L2支架.STL",
+      "mesh": "meshes/l2_bracket.stl"
+    },
+    "camera_bracket": {
+      "id": "camera_bracket",
+      "label": "摄像头左支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.1835,
+        -0.03,
+        -0.0
+      ],
+      "color": "#64c4bb",
+      "bounds_min_m": [
+        0.129,
+        0.0,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.23800000000000002,
+        0.06,
+        0.036799999237060545
+      ],
+      "size_mm": [
+        109.00000000000001,
+        60.0,
+        36.79999923706055
+      ],
+      "triangles": 3728,
+      "sha256": "f7818d60a5d248ea97b73e35c286e75c9e29c5c37191474294b00fe41dd936c3",
+      "source_relative": "摄像头左支架.STL",
+      "mesh": "meshes/camera_bracket.stl"
+    },
+    "camera_right_bracket": {
+      "id": "camera_right_bracket",
+      "label": "摄像头右支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.07449999809265137,
+        -0.03,
+        -0.0
+      ],
+      "color": "#599ed0",
+      "bounds_min_m": [
+        0.019999996185302734,
+        0.0,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.129,
+        0.06,
+        0.036799999237060545
+      ],
+      "size_mm": [
+        109.00000381469727,
+        60.0,
+        36.79999923706055
+      ],
+      "triangles": 3728,
+      "sha256": "649532122ec39ea18741f918adb360185f04b7b698126f1dac1175c9de69156e",
+      "source_relative": "摄像头右支架.STL",
+      "mesh": "meshes/camera_right_bracket.stl"
+    },
+    "ultrasonic_left": {
+      "id": "ultrasonic_left",
+      "label": "超声波左支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.046,
+        -0.03460000228881836,
+        -0.0
+      ],
+      "color": "#7ec88b",
+      "bounds_min_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.092,
+        0.06920000457763673,
+        0.056
+      ],
+      "size_mm": [
+        92.0,
+        69.20000457763672,
+        56.0
+      ],
+      "triangles": 1476,
+      "sha256": "ff1799e6afb181712b913d382e3ad51082faf2a8cbb7685b36bd955955672af1",
+      "source_relative": "超声波雷达左.STL",
+      "mesh": "meshes/ultrasonic_left.stl"
+    },
+    "ultrasonic_right": {
+      "id": "ultrasonic_right",
+      "label": "超声波右支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.046,
+        -0.1338000068664551,
+        -0.0
+      ],
+      "color": "#d39d73",
+      "bounds_min_m": [
+        0.0,
+        0.09920000457763672,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.092,
+        0.16840000915527345,
+        0.056
+      ],
+      "size_mm": [
+        92.0,
+        69.20000457763672,
+        56.0
+      ],
+      "triangles": 1456,
+      "sha256": "e5635561e8ec1eb7ac2a576bcb8e014a3b9ee7a51a3e5a3e3dc5ca8a6d440107",
+      "source_relative": "超声波雷达右.STL",
+      "mesh": "meshes/ultrasonic_right.stl"
+    },
+    "ultrasonic_body": {
+      "id": "ultrasonic_body",
+      "label": "超声波探头本体",
+      "scale": 0.001,
+      "offset_m": [
+        -0.02349999911338091,
+        -0.026100000381469726,
+        -0.0
+      ],
+      "color": "#465768",
+      "bounds_min_m": [
+        1.2869015336036682e-05,
+        0.0,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.04698712921142578,
+        0.05220000076293945,
+        0.018000000000000002
+      ],
+      "size_mm": [
+        46.974260196089745,
+        52.20000076293945,
+        18.000000000000004
+      ],
+      "triangles": 46776,
+      "sha256": "67cdac8ae9f27c4f4a0a8d5aa79d6687231c8bd46ef69474d58c3fdf5df3cf68",
+      "source_relative": "超声波雷达.STL",
+      "mesh": "meshes/ultrasonic_body.stl"
+    },
+    "main_bracket": {
+      "id": "main_bracket",
+      "label": "主控总支架",
+      "scale": 0.001,
+      "offset_m": [
+        -0.12537500000000001,
+        -0.20500000000000002,
+        -0.0
+      ],
+      "color": "#af9ce0",
+      "bounds_min_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.25075000000000003,
+        0.41000000000000003,
+        0.19
+      ],
+      "size_mm": [
+        250.75000000000003,
+        410.00000000000006,
+        190.0
+      ],
+      "triangles": 20674,
+      "sha256": "5955660f350b756c96b00aa78e9e20765b3563369d5749cafbe5e17c2be4009f",
+      "source_relative": "主控总.STL",
+      "mesh": "meshes/main_bracket.stl"
+    }
+  }
+}

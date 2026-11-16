@@ -1,0 +1,42 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+  "requested_loops": 1,
+  "result": "failed",
+  "waypoints": [
+    {
+      "lap": 1,
+      "index": 1,
+      "goal": {
+        "x": 2.0,
+        "y": -3.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 24.136
+    },
+    {
+      "lap": 1,
+      "index": 2,
+      "goal": {
+        "x": 6.0,
+        "y": -3.0,
+        "yaw": 0.0
+      },
+      "result": "SUCCEEDED",
+      "sim_duration_s": 25.37
+    },
+    {
+      "lap": 1,
+      "index": 3,
+      "goal": {
+        "x": 8.121320343559642,
+        "y": -2.1213203435596424,
+        "yaw": 0.7853981633974483
+      },
+      "result": "FAILED",
+      "sim_duration_s": 41.046
+    }
+  ],
+  "wall_duration_s": 260.8844615750004,
+  "reason": "Waypoint 3 failed; patrol stopped"
+}

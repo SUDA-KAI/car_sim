@@ -1,0 +1,17 @@
+{
+  "scene": "slip_ice",
+  "samples": 455,
+  "sim_duration_s": 46.308,
+  "localization": "ground_truth",
+  "patrol_result": null,
+  "max_abs_pitch_deg": 3.944266424760919e-07,
+  "max_abs_roll_deg": 1.0310156091044063e-07,
+  "max_height_m": 0.0016760000000000008,
+  "wheel_speed_gap_rms": 0.1322898454126388,
+  "max_abs_wheel_speed_gap": 0.5500277374518969,
+  "max_wheel_pose_error_m": 2.2790168248000593,
+  "max_plan_distance_m": null,
+  "true_distance_m": 12.799874409017471,
+  "wheel_distance_m": 11.828715599405832,
+  "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+}

@@ -1,0 +1,27 @@
+{
+  "passed": false,
+  "checks": {
+    "action_succeeded": false,
+    "right_bend_traversed": true,
+    "left_bend_traversed": false,
+    "upper_straight_reached": false,
+    "lower_straight_reached": true,
+    "sufficient_travel": false,
+    "complete_heading_rotation": false,
+    "no_nominal_body_overlap": true,
+    "no_conservative_wheel_envelope_overlap": true
+  },
+  "scene_radius_m": 5.0,
+  "clear_width_m": 1.7,
+  "samples": 983,
+  "sim_duration_s": 100.164,
+  "distance_m": 18.32331871804438,
+  "nominal_loop_length_m": 47.41592653589793,
+  "heading_rotation_rad": 2.019743212858277,
+  "min_nominal_body_clearance_m": 0.17820258647378218,
+  "min_conservative_wheel_clearance_m": 0.05529039102542388,
+  "median_bend_speed_mps": 0.2235241539165445,
+  "bend_slow_sample_fraction": 0.34717607973421927,
+  "max_path_distance_m": 0.059532376086611154,
+  "note": "Ideal ground-truth localization and geometric envelope checks, not a contact-sensor or real-car safety validation."
+}

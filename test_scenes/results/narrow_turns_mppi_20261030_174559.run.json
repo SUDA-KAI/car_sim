@@ -1,0 +1,71 @@
+{
+  "scene": "narrow_turns",
+  "controller": "mppi",
+  "controller_plugin": "nav2_mppi_controller::MPPIController",
+  "localization": "ground_truth",
+  "world": "/home/a/ros2_ws/gz_sim/test_scenes/worlds/narrow_turns.sdf",
+  "ros_domain_id": "42",
+  "use_ultrasonic": true,
+  "ultrasonic_mounting": [
+    {
+      "frame": "ultrasonic_1",
+      "topic": "/ultrasonic_1",
+      "x": -0.45999999999999996,
+      "y": -0.47500000000000003,
+      "z": 0.49,
+      "yaw": -1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_2",
+      "topic": "/ultrasonic_2",
+      "x": 0.49,
+      "y": -0.47500000000000003,
+      "z": 0.49,
+      "yaw": -1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_3",
+      "topic": "/ultrasonic_3",
+      "x": 0.49,
+      "y": 0.47500000000000003,
+      "z": 0.49,
+      "yaw": 1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    },
+    {
+      "frame": "ultrasonic_4",
+      "topic": "/ultrasonic_4",
+      "x": -0.45999999999999996,
+      "y": 0.47500000000000003,
+      "z": 0.49,
+      "yaw": 1.5707963267948966,
+      "field_of_view": 1.0471975511965976,
+      "min_range": 0.03,
+      "max_range": 0.55,
+      "roll": 0.0,
+      "pitch": -0.0
+    }
+  ],
+  "use_l2": true,
+  "pointlio": false,
+  "sensor_mounting": "/tmp/patrol_assembly_tf_mdtw_ugq.yaml",
+  "use_assembly": true,
+  "assembly_revision": 3,
+  "max_forward_speed_mps": 0.3,
+  "max_yaw_rate_radps": 0.4,
+  "l2_config": "/home/a/ros2_ws/gz_sim/config/l2_sim.yaml"
+}

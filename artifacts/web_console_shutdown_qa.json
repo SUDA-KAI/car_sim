@@ -1,0 +1,11 @@
+{
+  "signal": "SIGTERM",
+  "owned_launch_groups": [
+    [
+      500244,
+      500244
+    ]
+  ],
+  "remaining_owned_processes": [],
+  "physical_chassis_launch_still_running": true
+}

@@ -1,0 +1,21 @@
+{
+  "scene": "narrow_17",
+  "samples": 1687,
+  "sim_duration_s": 171.97199999999998,
+  "localization": "ground_truth",
+  "patrol_result": "success",
+  "max_abs_pitch_deg": 1.2505324513545244e-07,
+  "max_abs_roll_deg": 1.0302264693773802e-08,
+  "max_height_m": 0.0016760000000000008,
+  "wheel_speed_gap_rms": 0.012720358719170063,
+  "max_abs_wheel_speed_gap": 0.04764137694011153,
+  "max_wheel_pose_error_m": 0.6727262774706327,
+  "max_plan_distance_m": 0.04720929857182667,
+  "true_distance_m": 19.637149524070896,
+  "wheel_distance_m": 20.484528404366028,
+  "max_abs_lateral_offset_m": 0.10024258156070437,
+  "min_estimated_side_clearance_m": 0.2691838138561862,
+  "potential_side_wall_overlap_samples": 0,
+  "steering_reversal_count": 152,
+  "note": "Wheel/true speed difference is a slip indicator, not a calibrated tyre slip ratio. No pass/fail thresholds assumed."
+}

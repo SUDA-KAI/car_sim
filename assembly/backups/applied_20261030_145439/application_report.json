@@ -1,0 +1,12 @@
+{
+  "source_config": "/home/a/ros2_ws/gz_sim/assembly/assembly_settings.json",
+  "revision": 3,
+  "saved_at": "2026-10-30T14:18:30.349977+08:00",
+  "applied_at": "2026-10-30T14:39:23.089680+08:00",
+  "parts": 24,
+  "supplementary_visuals": 12,
+  "source_sha256": "fa595795645fe199a9dd655ae108e4b282ef0f0291651ec7059b381f15da9a77",
+  "mass_and_collision": "Original car dynamics unchanged; bracket/sensor meshes are visual-only.",
+  "sensor_frames": "Canonical assembly frames, not editor pivot origins. Sonar acoustic frames remain separately measured.",
+  "build_command": "./build_assembly.sh"
+}

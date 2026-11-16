@@ -1,0 +1,7 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_17.yaml",
+  "requested_loops": 1,
+  "result": "canceled",
+  "waypoints": [],
+  "wall_duration_s": 42.52304741500029
+}

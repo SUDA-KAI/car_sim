@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "old_reference_xyz_m": [
+    -0.06000000000000005,
+    0,
+    0.495
+  ],
+  "new_reference_xyz_m": [
+    0.08999999999999997,
+    0,
+    0.495
+  ],
+  "browser_revision": 1,
+  "other_local_poses_notes_markers_preserved": true,
+  "status": "已修正横杠原点 · 保留未保存装配草稿",
+  "footer": "原点：车身地面中心 · 第三横杠：(90, 0, 495) mm",
+  "lidar_world_xyz": [
+    0.08999999999999997,
+    0,
+    0.929
+  ]
+}

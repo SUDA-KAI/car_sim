@@ -1,0 +1,82 @@
+{
+  "left": {
+    "frames": 7,
+    "stamps": [
+      367.524,
+      367.856,
+      368.022,
+      368.354,
+      368.52,
+      368.686,
+      369.848
+    ]
+  },
+  "right": {
+    "frames": 9,
+    "stamps": [
+      367.524,
+      367.69,
+      368.022,
+      368.354,
+      368.686,
+      369.018,
+      369.35,
+      369.682,
+      370.014
+    ]
+  },
+  "last_statuses": [
+    {
+      "state": "frame_gap",
+      "good_frames": 25,
+      "lost_frames": 44,
+      "dropped_pairs": 0,
+      "stereo_features": 508,
+      "processing_ms": 285.3033060000598,
+      "frame_dt_s": 83.83,
+      "previous_stereo_features": 508
+    },
+    {
+      "state": "tracking",
+      "good_frames": 26,
+      "lost_frames": 44,
+      "dropped_pairs": 0,
+      "stereo_features": 508,
+      "processing_ms": 506.9234359998518,
+      "inliers": 508,
+      "reprojection_rmse_px": 3.3849964893306606e-06,
+      "tracked_points": 508,
+      "frame_dt_s": 0.664
+    },
+    {
+      "state": "tracking",
+      "good_frames": 27,
+      "lost_frames": 44,
+      "dropped_pairs": 0,
+      "stereo_features": 508,
+      "processing_ms": 353.2831409993378,
+      "inliers": 508,
+      "reprojection_rmse_px": 3.3849964893306606e-06,
+      "tracked_points": 508,
+      "frame_dt_s": 0.49800000000000005
+    },
+    {
+      "state": "tracking",
+      "good_frames": 28,
+      "lost_frames": 44,
+      "dropped_pairs": 0,
+      "stereo_features": 508,
+      "processing_ms": 391.3103110007796,
+      "inliers": 508,
+      "reprojection_rmse_px": 3.3849964893306606e-06,
+      "tracked_points": 508,
+      "frame_dt_s": 0.332
+    },
+    {
+      "state": "waiting_for_images",
+      "good_frames": 28,
+      "lost_frames": 44,
+      "dropped_pairs": 0
+    }
+  ]
+}

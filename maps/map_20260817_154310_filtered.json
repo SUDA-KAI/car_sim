@@ -1,0 +1,12 @@
+{
+  "components_before": 285,
+  "components_removed": 231,
+  "removed_cells": 467,
+  "added_cells": 1486,
+  "min_area_m2": 0.004,
+  "radius_m": 0.04,
+  "source": "/home/a/ros2_ws/src/robot_core/robot_bringup/maps/map_20260817_154310.yaml",
+  "output": "/home/a/ros2_ws/gz_sim/maps/map_20260817_154310_filtered.yaml",
+  "unknown_cells": 4777192,
+  "note": "Gray 205 preserved as unknown; free_thresh normalized to 0.196. Closing, not Gaussian blur."
+}

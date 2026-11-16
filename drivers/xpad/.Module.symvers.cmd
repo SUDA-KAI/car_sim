@@ -1,0 +1,1 @@
+cmd_/home/a/ros2_ws/gz_sim/drivers/xpad/Module.symvers := sed 's/\.ko$$/\.o/' /home/a/ros2_ws/gz_sim/drivers/xpad/modules.order | scripts/mod/modpost -m   -o /home/a/ros2_ws/gz_sim/drivers/xpad/Module.symvers -e -i Module.symvers   -T -

@@ -1,0 +1,10 @@
+{
+  "patrol": "自动巡逻：正在沿通道巡逻 · 已行驶 6.0 m · 完成 0 圈",
+  "map": "/map · 坐标系 map · 1572 点 · 0.2 s 前更新",
+  "images": [
+    384,
+    384
+  ],
+  "mobile_no_overflow": true,
+  "passed": true
+}

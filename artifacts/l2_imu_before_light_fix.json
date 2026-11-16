@@ -1,0 +1,196 @@
+{
+  "static": {
+    "/ground_truth/odom": {
+      "stamp": 9.282,
+      "frame": "odom",
+      "x": -3.0000000000000653,
+      "y": 0.09999999999999308,
+      "z": -7.842996248340675e-07,
+      "v": 0.0,
+      "w": 0.0,
+      "yaw": 0.0523598775597396
+    },
+    "/pointlio/odometry": {
+      "stamp": 5.2,
+      "frame": "pointlio_map",
+      "x": 0.005881921564116636,
+      "y": -0.0002511787907074548,
+      "z": 0.002189439491179729,
+      "v": 8.414808361381274e-05,
+      "w": -2.261136264758876e-05,
+      "yaw": 0.00015075512542911347
+    },
+    "/unilidar/cloud": {
+      "stamp": 9.1,
+      "frame": "unilidar_lidar",
+      "points": 1938,
+      "z_min": 0.0,
+      "z_max": 14.082468032836914,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "intensity",
+        "ring",
+        "time"
+      ]
+    },
+    "/scan": {
+      "stamp": 9.1,
+      "frame": "unilidar_lidar",
+      "left": 0.7538523077964783,
+      "right": 0.9477543830871582,
+      "finite": 360
+    },
+    "/unilidar/imu": {
+      "stamp": 9.27,
+      "frame": "unilidar_imu",
+      "acc": [
+        4.470337051288175e-09,
+        -8.715731222457265e-15,
+        9.800000000000033
+      ],
+      "gyro": [
+        2.2910688856665835e-17,
+        -1.0257032300031028e-16,
+        -6.369967910102011e-18
+      ],
+      "q": [
+        5.9699001944284955e-12,
+        -2.2800449243255768e-10,
+        0.026176948307826582,
+        0.9996573249755585
+      ]
+    },
+    "/imu/data_raw": {
+      "stamp": 9.27,
+      "frame": "imu_link",
+      "acc": [
+        4.4703628114856356e-09,
+        -9.944914825560796e-15,
+        9.800000000000033
+      ],
+      "gyro": [
+        2.2910688856665835e-17,
+        -1.0257032300031028e-16,
+        -6.369967910102011e-18
+      ],
+      "q": [
+        5.9699001944284955e-12,
+        -2.2800449243255768e-10,
+        0.026176948307826582,
+        0.9996573249755585
+      ]
+    }
+  },
+  "finish": {
+    "/ground_truth/odom": {
+      "stamp": 14.79,
+      "frame": "odom",
+      "x": -2.22755159279351,
+      "y": 0.2570779566927932,
+      "z": -1.573930348278063e-08,
+      "v": 0.0,
+      "w": 0.0,
+      "yaw": 0.19756549471648865
+    },
+    "/pointlio/odometry": {
+      "stamp": 8.5,
+      "frame": "pointlio_map",
+      "x": 0.005894293320237051,
+      "y": -0.00025790135402904376,
+      "z": 0.002181279481356896,
+      "v": 0.0004253858322776575,
+      "w": 7.967705711401726e-06,
+      "yaw": 0.0001515531084933833
+    },
+    "/unilidar/cloud": {
+      "stamp": 14.7,
+      "frame": "unilidar_lidar",
+      "points": 1972,
+      "z_min": 0.0,
+      "z_max": 14.089080810546875,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "intensity",
+        "ring",
+        "time"
+      ]
+    },
+    "/scan": {
+      "stamp": 14.7,
+      "frame": "unilidar_lidar",
+      "left": 0.6157187223434448,
+      "right": 1.1152639389038086,
+      "finite": 360
+    },
+    "/unilidar/imu": {
+      "stamp": 14.79,
+      "frame": "unilidar_imu",
+      "acc": [
+        -3.0085676172444263e-10,
+        -2.0156993525214334e-10,
+        9.80000000000896
+      ],
+      "gyro": [
+        5.6276382343242976e-12,
+        -3.4252568700028206e-11,
+        1.6720948091242428e-06
+      ],
+      "q": [
+        1.9952927287718468e-11,
+        -2.2356398722197023e-10,
+        0.09862300199518843,
+        0.9951248682841048
+      ]
+    },
+    "/imu/data_raw": {
+      "stamp": 14.79,
+      "frame": "imu_link",
+      "acc": [
+        -2.4322599979781324e-10,
+        -2.6121416666917754e-10,
+        9.800000000007483
+      ],
+      "gyro": [
+        5.6276382343242976e-12,
+        -3.4252568700028206e-11,
+        1.6720948091242428e-06
+      ],
+      "q": [
+        1.9952927287718468e-11,
+        -2.2356398722197023e-10,
+        0.09862300199518843,
+        0.9951248682841048
+      ]
+    }
+  },
+  "frames": {
+    "ultrasonic_2": "base_link",
+    "ultrasonic_1": "base_link",
+    "camera_right_link_optical": "camera_right_link",
+    "camera_left_link": "third_crossbar",
+    "ultrasonic_3": "base_link",
+    "ultrasonic_4": "base_link",
+    "unilidar_lidar": "third_crossbar",
+    "imu_link": "third_crossbar",
+    "camera_left_link_optical": "camera_left_link",
+    "unilidar_imu": "unilidar_lidar",
+    "third_crossbar": "base_link",
+    "camera_right_link": "third_crossbar"
+  },
+  "displacement_m": 0.7882575887834697,
+  "max_abs_gyro_z": 0.039000055021454476,
+  "result": "failed",
+  "error": "GUI/sky ghost returns",
+  "available": [
+    "/ground_truth/odom",
+    "/pointlio/odometry",
+    "/unilidar/cloud",
+    "/scan",
+    "/unilidar/imu",
+    "/imu/data_raw"
+  ]
+}

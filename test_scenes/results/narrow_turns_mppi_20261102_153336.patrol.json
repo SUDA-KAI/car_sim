@@ -1,0 +1,19 @@
+{
+  "route": "/home/a/ros2_ws/gz_sim/test_scenes/routes/narrow_turns.yaml",
+  "requested_loops": 1,
+  "navigation_mode": "through_poses",
+  "result": "failed",
+  "waypoints": [],
+  "segments": [
+    {
+      "lap": 1,
+      "result": "FAILED",
+      "sim_duration_s": 53.262,
+      "via_points": 7,
+      "segment": 1
+    }
+  ],
+  "laps": [],
+  "wall_duration_s": 185.84463639299975,
+  "reason": "Waypoint 1 failed; patrol stopped"
+}

@@ -1,0 +1,106 @@
+{
+  "domain": 43,
+  "partition": "patrol_sensors",
+  "passed": true,
+  "goal_source": "estimated map -> base_link TF plus 1.2 m forward; no truth seed",
+  "command_gate_publishers": [
+    "sim_sensor_command_gate"
+  ],
+  "evaluation_true_start": {
+    "x": -2.000000000000005,
+    "y": -5.0,
+    "z": -7.842996248339474e-07
+  },
+  "goal": {
+    "x": 1.2002543448862943,
+    "y": -5.187659119455341e-06,
+    "yaw": 3.5806879626232295e-05
+  },
+  "nav_result": "SUCCEEDED",
+  "wall_duration_s": 26.24020709300021,
+  "evaluation_true_end": {
+    "x": -0.9859544904209123,
+    "y": -5.006222569738532,
+    "z": -1.5732571074858216e-08
+  },
+  "odom_displacements": {
+    "fused": {
+      "dx": 1.007122937280108,
+      "dy": 0.0029423050267560155
+    },
+    "lio": {
+      "dx": 0.949330118041755,
+      "dy": -0.0010051320384910408
+    },
+    "visual": {
+      "dx": 0.9750893394130269,
+      "dy": -0.0014460984844402586
+    }
+  },
+  "evaluation_true_delta": {
+    "x": 1.0140455095790926,
+    "y": -0.00622256973853208
+  },
+  "true_distance_m": 1.0140646014291557,
+  "fused_displacement_error_m": 0.011485509857994217,
+  "message_counts": {
+    "lio": 17,
+    "visual": 22,
+    "fused": 102
+  },
+  "visual_status_final": {
+    "state": "tracking",
+    "good_frames": 238,
+    "lost_frames": 0,
+    "dropped_pairs": 0,
+    "stereo_features": 128,
+    "processing_ms": 392.7287469996372,
+    "inliers": 124,
+    "reprojection_rmse_px": 0.27037471532821655,
+    "tracked_points": 128,
+    "frame_dt_s": 0.25
+  },
+  "truth_topic_publishers": {
+    "/ground_truth/odom": 0,
+    "/wheel/odom": 0
+  },
+  "fused_publishers": [
+    "ekf_filter_node"
+  ],
+  "visual_consumers": [
+    "sim_sensor_monitor",
+    "sim_sensor_command_gate",
+    "ekf_filter_node",
+    "sensor_navigation_validation"
+  ],
+  "moving_visual_measurements": 17,
+  "checks": {
+    "nav_succeeded": true,
+    "true_motion": true,
+    "fusion_position_error_under_20cm": true,
+    "visual_motion_used": true,
+    "truth_not_bridged": true,
+    "ekf_owns_odometry": true,
+    "forward_motion": true,
+    "lio_motion_used": true,
+    "motion_bridge_is_gated": true
+  },
+  "unit_tests_passed": 39,
+  "config_bundle": "/home/a/ros2_ws/gz_sim/calibration/sensor_navigation_bundle",
+  "gate_fault_test": {
+    "passed": true,
+    "domain": 74,
+    "healthy_command_forwarded": true,
+    "lost_position_sources_stop_motion": true,
+    "fresh_ekf_prediction_does_not_bypass_gate": true,
+    "no_gazebo_or_hardware": true
+  },
+  "scope": "One cold-start short straight Nav2 goal with online SLAM and sensor-only state; no full-lap sensor-navigation claim.",
+  "runtime_log_counts": {
+    "optimizer_failures": 0,
+    "backup_recoveries": 0,
+    "wait_recoveries": 0,
+    "controller_rate_warnings": 0,
+    "planner_failures": 0
+  }
+}

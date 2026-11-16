@@ -1,0 +1,18 @@
+{
+  "backup": "/home/a/ros2_ws/gz_sim/assembly/backups/origin_1p2m_20261030_124301",
+  "old_xyz_m": [
+    -0.06000000000000005,
+    0,
+    0.495
+  ],
+  "new_xyz_m": [
+    0.08999999999999997,
+    0.0,
+    0.495
+  ],
+  "delta_x_m": 0.15000000000000002,
+  "relative_sensor_poses_preserved": true,
+  "ultrasonic_front_distance_from_rear_m": 1.39,
+  "ultrasonic_front_beyond_body_m": 0.19,
+  "hardware_nodes_restarted": false
+}
