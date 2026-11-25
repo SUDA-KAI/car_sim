@@ -50,14 +50,14 @@
       "asset": "l2",
       "parent": "third_crossbar",
       "xyz_m": [
-        0,
-        0,
-        0.43400000000000005
+        0.0,
+        0.0,
+        0.434
       ],
       "rpy_deg": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "visible": true,
       "confirmed": true,
@@ -528,10 +528,50 @@
       "confirmed": true,
       "category": "attachment",
       "notes": "真实探头本体 STL，暂放对应支架上方，尚未确认安装。移动/旋转本体以对齐探头面及螺孔；测距坐标保持不变。"
+    },
+    {
+      "id": "unilidar_imu",
+      "label": "unilidar_imu",
+      "asset": "frame",
+      "parent": "base_link",
+      "xyz_m": [
+        0.082302,
+        -0.014655,
+        0.93567
+      ],
+      "rpy_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "visible": true,
+      "confirmed": true,
+      "notes": "来自已确认的 sensor_mounting_tf.yaml",
+      "category": "reference"
+    },
+    {
+      "id": "lidar_link",
+      "label": "lidar_link",
+      "asset": "frame",
+      "parent": "unilidar_lidar",
+      "xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "visible": true,
+      "confirmed": true,
+      "notes": "来自已确认的 sensor_mounting_tf.yaml",
+      "category": "reference"
     }
   ],
   "markers": [],
-  "source_mounting_sha256": "64ffc1f5075fe098d69ce09de49fb7294420431e239dbc79a7f2d9bb7d9cfe05",
+  "source_mounting_sha256": "d6229fa9f62e8394dab7617b3e86e23ea8ecfd84f3696408fb59c64aea0de865",
   "reference_correction": {
     "from_revision": 0,
     "to_revision": 1,

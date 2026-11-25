@@ -10,18 +10,10 @@ third_crossbar:
   pitch: 0
   yaw: 0
 unilidar_lidar:
-  parent: base_link
-  x: 0.6
+  parent: third_crossbar
+  x: 0.0
   y: 0.0
-  z: 0.5
-  roll: 0
-  pitch: 0
-  yaw: 0
-  quaternion_xyzw:
-  - 0
-  - 0
-  - 0
-  - 1
+  z: 0.434
 camera_left_link:
   parent: third_crossbar
   x: 0
@@ -131,12 +123,9 @@ ultrasonic_4:
   - 0.7071067811865476
 unilidar_imu:
   parent: base_link
-  x: 0.592302
+  x: 0.082302
   y: -0.014655
-  z: 0.50667
-  roll: 0
-  pitch: 0
-  yaw: 0
+  z: 0.93567
 lidar_link:
   parent: unilidar_lidar
   x: 0

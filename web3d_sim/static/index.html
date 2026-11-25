@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web3D · 环卫小车仿真导航台</title>
+<style>
+  :root {
+    --bg: #14171c; --panel: #1c2128; --panel2: #22282f; --line: #303842;
+    --text: #d8dee6; --dim: #8b96a3; --accent: #4aa3ff; --ok: #3ecf8e;
+    --warn: #f2b04a; --err: #ef6b73;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 14px/1.6 "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    display: flex; flex-direction: column;
+  }
+  header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: var(--panel); border-bottom: 1px solid var(--line);
+  }
+  header h1 { font-size: 17px; font-weight: 600; }
+  .badge {
+    font-size: 12px; padding: 2px 10px; border-radius: 999px;
+    background: var(--panel2); border: 1px solid var(--line); color: var(--dim);
+  }
+  .badge.ok { color: var(--ok); border-color: var(--ok); }
+  .badge.warn { color: var(--warn); border-color: var(--warn); }
+  .badge.err { color: var(--err); border-color: var(--err); }
+  main { flex: 1; display: flex; min-height: 0; }
+  aside {
+    width: 320px; background: var(--panel); border-right: 1px solid var(--line);
+    padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px;
+  }
+  aside.right {
+    width: 400px; border-right: none; border-left: 1px solid var(--line);
+    gap: 12px;
+  }
+  #map2d, #pano {
+    width: 100%; aspect-ratio: 1; background: #0d1014;
+    border: 1px solid var(--line); border-radius: 8px; cursor: crosshair;
+  }
+  .cam-row { display: flex; gap: 8px; }
+  .cam-row figure {
+    flex: 1; margin: 0; background: #0d1014; border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+  }
+  .cam-row img { width: 100%; display: block; min-height: 90px; }
+  .cam-row figcaption {
+    font-size: 11px; color: var(--dim); text-align: center; padding: 3px 0;
+    background: var(--panel2);
+  }
+  section h2 {
+    font-size: 13px; color: var(--dim); font-weight: 600;
+    letter-spacing: .08em; margin-bottom: 8px;
+  }
+  select, input[type=text], input[type=number], input[type=file] {
+    width: 100%; background: var(--panel2); color: var(--text);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  }
+  button {
+    width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--panel2); color: var(--text); cursor: pointer; font-size: 14px;
+  }
+  button:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.danger { background: #46262b; border-color: var(--err); color: var(--err); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .row { display: flex; gap: 8px; }
+  .row > * { flex: 1; }
+  .hint { font-size: 12px; color: var(--dim); }
+  #view { flex: 1; position: relative; min-width: 0; }
+  canvas { display: block; width: 100%; height: 100%; }
+  #statusbar {
+    display: flex; gap: 18px; align-items: center;
+    padding: 8px 18px; background: var(--panel); border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--dim); flex-wrap: wrap;
+  }
+  #statusbar b { color: var(--text); font-weight: 600; }
+  #toast {
+    position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    background: #000c; color: #fff; padding: 10px 18px; border-radius: 10px;
+    opacity: 0; transition: opacity .3s; pointer-events: none; max-width: 70%;
+  }
+  #navstate.ok { color: var(--ok); } #navstate.err { color: var(--err); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--dim); }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Web3D · 环卫小车仿真导航台</h1>
+  <span class="badge" id="b-bridge">rosbridge 未连接</span>
+  <span class="badge" id="b-sim">仿真未运行</span>
+  <span class="badge" id="b-clock">仿真时钟 --</span>
+</header>
+<main>
+  <aside>
+    <section>
+      <h2>场景 / 地图</h2>
+      <select id="scene"></select>
+      <div class="row" style="margin-top:8px">
+        <button id="btn-start" class="primary">启动仿真</button>
+        <button id="btn-stop" class="danger">停止</button>
+      </div>
+      <p class="hint" style="margin-top:6px">Gazebo 物理引擎在后端无界面运行，三维过程直接在右侧显示。</p>
+    </section>
+
+    <section>
+      <h2>加载已有地图</h2>
+      <select id="server-map"></select>
+      <button id="btn-use-map" style="margin-top:8px">加载为场景并显示</button>
+      <p class="hint">直接选用服务器上的地图文件（项目 maps/ 目录及已上传的），一键生成三维场景。</p>
+    </section>
+
+    <section>
+      <h2>导入自定义地图</h2>
+      <input type="text" id="map-name" placeholder="场景名称（可选）">
+      <input type="file" id="map-yaml" accept=".yaml,.yml">
+      <input type="file" id="map-image" accept=".pgm,.png" style="margin-top:6px">
+      <button id="btn-upload" style="margin-top:8px">上传并生成场景</button>
+      <p class="hint">ROS 地图 YAML + PGM/PNG，自动挤出墙体生成三维场景。</p>
+    </section>
+
+    <section>
+      <h2>导航</h2>
+      <p class="hint">在三维场景中 <b>单击地面</b> 发送导航目标；<b>拖动</b> 旋转视角；滚轮缩放；右键平移。</p>
+      <button id="btn-cancel" class="danger" style="margin-top:8px">取消导航</button>
+      <p class="hint" style="margin-top:8px">目标状态：<span id="navstate">空闲</span></p>
+    </section>
+
+    <section>
+      <h2>键盘遥控</h2>
+      <p class="hint">W/S 前进后退 · A/D 转向 · 空格 停车（点击三维区后生效）</p>
+    </section>
+
+    <section>
+      <h2>图层</h2>
+      <label class="hint"><input type="checkbox" id="ly-scan" checked> 激光雷达</label><br>
+      <label class="hint"><input type="checkbox" id="ly-plan" checked> 规划路径</label><br>
+      <label class="hint"><input type="checkbox" id="ly-trail" checked> 行驶轨迹</label><br>
+      <label class="hint"><input type="checkbox" id="ly-walls" checked> 地图墙体</label>
+    </section>
+
+    <section>
+      <div class="legend">
+        <span><span class="dot" style="background:#4aa3ff"></span>小车</span>
+        <span><span class="dot" style="background:#3ecf8e"></span>激光</span>
+        <span><span class="dot" style="background:#f2b04a"></span>路径</span>
+        <span><span class="dot" style="background:#ef6b73"></span>目标</span>
+      </div>
+    </section>
+  </aside>
+  <div id="view"><div id="toast"></div></div>
+  <aside class="right">
+    <section>
+      <h2>二维栅格地图 · 点击发送导航目标</h2>
+      <canvas id="map2d"></canvas>
+      <p class="hint" style="margin-top:6px">蓝箭头=小车 · 绿点=激光 · 黄线=规划路径 · 红三角=当前目标</p>
+    </section>
+    <section>
+      <h2>双目相机</h2>
+      <div class="cam-row">
+        <figure>
+          <img id="cam-left" src="/api/camera/left/stream" alt="左目">
+          <figcaption>左目 camera_left</figcaption>
+        </figure>
+        <figure>
+          <img id="cam-right" src="/api/camera/right/stream" alt="右目">
+          <figcaption>右目 camera_right</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <h2>局部全景 · 激光点云 + 超声波</h2>
+      <canvas id="pano"></canvas>
+      <p class="hint">中心为小车（车头朝上）· 绿点=激光点云 · 楔形=超声波（越近越红）· 圆圈间距 1m</p>
+    </section>
+  </aside>
+</main>
+<div id="statusbar">
+  <span>导航状态 <b id="sb-nav">--</b></span>
+  <span>定位 <b id="sb-pose">--</b></span>
+  <span>激光 <b id="sb-scan">--</b></span>
+  <span>剩余距离 <b id="sb-dist">--</b></span>
+  <span style="margin-left:auto">Web3D 仿真台 · Gazebo Fortress 物理引擎 · 浏览器三维渲染</span>
+</div>
+<script src="/static/vendor/roslib.min.js"></script>
+<script type="importmap">
+{ "imports": { "three": "/static/vendor/three.module.js" } }
+</script>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

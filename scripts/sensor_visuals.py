@@ -40,10 +40,18 @@ def add_visuals(tree,mounting_path,axes=False,l2_mesh=None):
             node=visual(base,'measured_l2_mesh',transform,'.16 .18 .20 1','mesh',uri=mesh.as_uri(),scale='1 1 1')
         elif frame in ('camera_left_link','camera_right_link'):
             color='.7 .45 .16 1' if frame=='camera_left_link' else '.12 .42 .65 1'
-            visual(base,'measured_'+frame,transform,color,'box',size='.06 .05 .04')
+            # Camera markers sit BEHIND the sensor plane (-X): mechanical camera +X
+            # points forward, so anything at +X renders as a huge disc in the image
+            # (Fortress cameras have no visibility_mask). Same trick keeps them out
+            # of the neighbour camera's frustum; visibility_flags=2 hides them from
+            # GPU lidars (mask bit 2), matching measured_l2_mesh handling.
+            back=np.eye(4);back[0,3]=-.04
+            box=visual(base,'measured_'+frame,transform@back,color,'box',size='.06 .05 .04')
+            ET.SubElement(box,'visibility_flags').text='2'
             # Mechanical camera +X points forward. Cylinder local +Z is rotated to +X.
-            local=np.eye(4);local[:3,:3]=[[0,0,1],[0,1,0],[-1,0,0]];local[0,3]=.035
-            visual(base,'measured_'+frame+'_lens',transform@local,'.025 .025 .025 1','cylinder',radius=.013,length=.012)
+            local=np.eye(4);local[:3,:3]=[[0,0,1],[0,1,0],[-1,0,0]];local[0,3]=-.05
+            lens=visual(base,'measured_'+frame+'_lens',transform@local,'.025 .025 .025 1','cylinder',radius=.013,length=.012)
+            ET.SubElement(lens,'visibility_flags').text='2'
         elif frame=='imu_link':
             visual(base,'measured_external_imu',transform,'.48 .23 .72 1','box',size='.04 .03 .015')
         elif frame=='third_crossbar':

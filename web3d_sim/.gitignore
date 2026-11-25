@@ -1,0 +1,6 @@
+# 运行时产物与第三方库 (用 fetch_vendor.sh 下载)
+data/
+logs/
+static/vendor/
+__pycache__/
+*.pyc
